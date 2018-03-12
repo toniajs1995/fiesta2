@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Fiesta2</string>
+
+    <array name="who">
+        <item>Client</item>
+        <item>Service Provider</item>
+    </array>
+
+    <array name="district">
+        <item>Alapuzha</item>
+        <item>Ernakulam</item>
+        <item>Idukki</item>
+        <item>Kannur</item>
+        <item>Kasargod</item>
+        <item>Kottayam</item>
+        <item>Kozhikode</item>
+        <item>Kollam</item>
+        <item>Malapuram</item>
+        <item>Palakkad</item>
+        <item>Pathanamthitta</item>
+        <item>Thiruvanathapuram</item>
+        <item>Trissur</item>
+        <item>Wayanad</item>
+    </array>
+    <string name="title_activity_server">server</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

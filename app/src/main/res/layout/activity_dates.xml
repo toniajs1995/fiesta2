@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.project.fiesta2.dates">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available Dates"
+            android:textSize="30sp"/>
+
+        <EditText
+            android:layout_height="67dp"
+            android:layout_width="324dp"
+            android:inputType="date"
+            tools:layout_editor_absoluteY="76dp"
+            tools:layout_editor_absoluteX="21dp"
+            android:hint="Enter the available date"
+            android:id="@+id/date1"/>
+
+        <EditText
+            android:layout_height="67dp"
+            android:layout_width="324dp"
+            android:inputType="date"
+            tools:layout_editor_absoluteY="76dp"
+            tools:layout_editor_absoluteX="21dp"
+            android:hint="Enter the available date"
+            android:id="@+id/date2"/>
+
+        <EditText
+            android:layout_height="67dp"
+            android:layout_width="324dp"
+            android:inputType="date"
+            tools:layout_editor_absoluteY="76dp"
+            tools:layout_editor_absoluteX="21dp"
+            android:hint="Enter the available date"
+            android:id="@+id/date3"/>
+
+        <EditText
+            android:layout_height="67dp"
+            android:layout_width="324dp"
+            android:inputType="date"
+            tools:layout_editor_absoluteY="76dp"
+            tools:layout_editor_absoluteX="21dp"
+            android:hint="Enter the available date"
+            android:id="@+id/date4"/>
+
+        <EditText
+            android:layout_height="67dp"
+            android:layout_width="324dp"
+            android:inputType="date"
+            tools:layout_editor_absoluteY="76dp"
+            tools:layout_editor_absoluteX="21dp"
+            android:hint="Enter the available date"
+            android:id="@+id/date5"/>
+
+        <Button
+            android:layout_height="67dp"
+            android:layout_width="216dp"
+            tools:layout_editor_absoluteY="199dp"
+            tools:layout_editor_absoluteX="72dp"
+            android:id="@+id/submit"
+            android:text="Submit"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+
+

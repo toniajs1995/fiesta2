@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.project.fiesta2">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".choose" />
+        <activity
+            android:name=".server"
+            android:label="@string/title_activity_server"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".profile" />
+        <activity android:name=".recent" />
+        <activity android:name=".client" />
+        <activity android:name=".budget" />
+        <activity android:name=".marriage" />
+        <activity android:name=".deco" />
+        <activity android:name=".location" />
+        <activity android:name=".dates" />
+        <activity android:name=".company_display"></activity>
+    </application>
+
+</manifest>
