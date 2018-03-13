@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     public void optionselected(View view) {
         EditText e1=(EditText)findViewById(R.id.loc);
         place=e1.getText().toString();
-        //long p = Long.parseLong(place);
+        
 
         databaseArtists.addValueEventListener(new ValueEventListener() {
             @Override
