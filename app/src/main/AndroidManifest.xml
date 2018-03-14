@@ -7,9 +7,10 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Fiesta"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -31,7 +32,9 @@
         <activity android:name=".deco" />
         <activity android:name=".location" />
         <activity android:name=".dates" />
-        <activity android:name=".company_display"></activity>
+        <activity android:name=".company_display" />
+        <activity android:name=".prof_display"/>
+        <activity android:name=".cat"></activity>
     </application>
 
 </manifest>

@@ -13,9 +13,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 public class server extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Button view_prof;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +33,21 @@ public class server extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Button view_prof=(Button)findViewById(R.id.view_prof);
+        view_prof.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(server.this, prof_display.class);
+                startActivity(i);
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(server.this,prof_display.class);
+                startActivity(intent);
             }
         });
 
@@ -41,6 +59,21 @@ public class server extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+
+        if (acct != null) {
+            View header=navigationView.getHeaderView(0);
+            String personName = acct.getDisplayName();
+            TextView username = (TextView) header.findViewById(R.id.uname);
+            username.setText(personName);
+            String personEmail = acct.getEmail();
+            TextView mailText = (TextView) header.findViewById(R.id.uemail);
+            mailText.setText(personEmail);
+
+            //String personPhotoUrl = acct.getPhotoUrl().toString();
+          //  ImageView imgProfilePic = (ImageView) header.findViewById(R.id.imageView);
+           // Glide.with(getApplicationContext()).load(personPhotoUrl).into(imgProfilePic);
+        }
     }
 
     @Override

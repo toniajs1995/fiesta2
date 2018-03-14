@@ -1,11 +1,15 @@
 package com.example.project.fiesta2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,7 +18,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class budget extends AppCompatActivity {
 
@@ -53,9 +59,20 @@ public class budget extends AppCompatActivity {
 
                     artistList.add(artist);
                 }
-                ArtistList adapter=new ArtistList(budget.this,artistList);
+                final ArtistList adapter=new ArtistList(budget.this,artistList);
                 listViewArtists.setAdapter(adapter);
+                listViewArtists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                        Companies companies=artistList.get(position);
+                        String key=companies.getKey();
+                        Intent intent = new Intent(budget.this,company_display.class);
+                        intent.putExtra("key",key);
+                        startActivity(intent);
+                    }
+
+                });
             }
 
             @Override

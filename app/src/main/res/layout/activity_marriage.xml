@@ -14,9 +14,9 @@
         android:layout_height="wrap_content">
 
         <include
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            layout="@layout/mlayout" />
+            layout="@layout/mlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </ScrollView>
 </LinearLayout>

@@ -13,11 +13,11 @@
         android:layout_gravity="center_vertical">
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:textSize="20sp"
-            android:text="YOU ARE"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Are U A Client or ServiceProvider??"
+            android:textSize="20sp" />
 
         <Spinner
             android:layout_gravity="center"

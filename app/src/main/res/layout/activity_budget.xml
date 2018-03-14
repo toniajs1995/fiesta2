@@ -7,40 +7,43 @@
     tools:context="com.example.project.fiesta2.budget">
 
     <EditText
-        android:layout_height="62dp"
+        android:id="@+id/loc"
         android:layout_width="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints"
-        app:layout_constraintVertical_bias="0.018"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:hint="Enter your Maximum Budget"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:id="@+id/loc"/>
-
-    <Button
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintVertical_bias="0.008"
-        app:layout_constraintBottom_toBottomOf="@+id/listViewArtists"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:id="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/loc"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="36dp"
+        android:hint="  Enter your Maximum Budget"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Search..."
-        android:onClick="optionselected"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ListView
-        android:layout_height="354dp"
-        android:layout_width="398dp"
-        tools:layout_editor_absoluteX="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/listViewArtists"
+        android:layout_width="375dp"
+        android:layout_height="294dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.487"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:onClick="optionselected"
+        android:text="Search..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loc" />
 
 </android.support.constraint.ConstraintLayout>

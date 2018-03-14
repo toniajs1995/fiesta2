@@ -7,6 +7,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
  */
 @IgnoreExtraProperties
 public class Companies {
+    public String key;
     public String name;
     public String address;
     public String location;
@@ -22,7 +23,8 @@ public class Companies {
     public Companies() {
     }
 
-    public Companies(String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String license_no, String phone, String district, String category) {
+    public Companies(String key,String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String license_no, String phone, String district, String category) {
+        this.key=key;
         this.name = name;
         this.address = address;
         this.location = location;
@@ -76,6 +78,8 @@ public class Companies {
     public String getImage() {
         return image;
     }
+
+    public String getKey() {return key;}
 }
 
 

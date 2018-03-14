@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class deco extends AppCompatActivity {
+public class cat extends AppCompatActivity {
 
     //recyclerview object
     private RecyclerView recyclerView;
@@ -35,7 +35,7 @@ public class deco extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deco);
+        setContentView(R.layout.activity_cat);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -49,12 +49,13 @@ public class deco extends AppCompatActivity {
         //displaying progress dialog while fetching images
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
-        mDatabase = FirebaseDatabase.getInstance().getReference("decoration");
-       // mDatabase.child("decoration");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("catering");
+
         //adding an event listener to fetch values
-        mDatabase.addValueEventListener(new ValueEventListener() {
+        mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
+            public void onChildAdded(DataSnapshot snapshot, String s) {
                 //dismissing the progress dialog
                 progressDialog.dismiss();
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
@@ -70,10 +71,24 @@ public class deco extends AppCompatActivity {
 
             }
             @Override
+            public void onChildChanged(DataSnapshot snapshot,String s)
+            {
+
+            }
+            @Override
+            public void onChildRemoved(DataSnapshot snapshot)
+            {
+
+            }
+            @Override
+            public void onChildMoved(DataSnapshot snapshot,String s)
+            {
+
+            }
+            @Override
             public void onCancelled(DatabaseError databaseError) {
                 progressDialog.dismiss();
             }
         });
     }
 }
-

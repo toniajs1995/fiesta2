@@ -1,8 +1,10 @@
 package com.example.project.fiesta2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -86,7 +88,18 @@ public class location extends AppCompatActivity {
                 }
                 ArtistList1 adapter=new ArtistList1(location.this,artistList1);
                 listViewArtists.setAdapter(adapter);
+                listViewArtists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                        Companies companies=artistList1.get(position);
+                        String key=companies.getKey();
+                        Intent intent = new Intent(location.this,company_display.class);
+                        intent.putExtra("key",key);
+                        startActivity(intent);
+                    }
+
+                });
             }
 
             @Override

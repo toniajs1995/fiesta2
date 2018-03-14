@@ -32,7 +32,7 @@ public class profile extends AppCompatActivity {
 
     Button uploadbtn, choosebtn;
     Spinner dis;
-    String sid,scategory;
+    String sid,scategory,slic,sdistrict,slocation,sminbudget,smaxbudget,semail,sphone;
     private Uri filePath;
     private final int PICK_IMAGE_REQUEST = 71;
 
@@ -111,6 +111,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("decoration");
                 Map decoration = new HashMap();
                 decoration.put("name",sname);
+                decoration.put("key",uid);
+                decoration.put("licence_no", slic);
+                decoration.put("address", sadd);
+                decoration.put("district", sdistrict);
+                decoration.put("category", scategory);
+                decoration.put("min_budget", sminbudget);
+                decoration.put("max_budget", smaxbudget);
+                decoration.put("location", slocation);
+                decoration.put("email_id", semail);
+                decoration.put("phone", sphone);
                 // uid = ref.push().getKey();
                 ref.child(uid).setValue(decoration);
             }
@@ -121,6 +131,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("hair_makeup");
                 Map hair_makeup = new HashMap();
                 hair_makeup.put("name",sname);
+                hair_makeup.put("key",uid);
+                hair_makeup.put("licence_no", slic);
+                hair_makeup.put("address", sadd);
+                hair_makeup.put("district", sdistrict);
+                hair_makeup.put("category", scategory);
+                hair_makeup.put("min_budget", sminbudget);
+                hair_makeup.put("max_budget", smaxbudget);
+                hair_makeup.put("location", slocation);
+                hair_makeup.put("email_id", semail);
+                hair_makeup.put("phone", sphone);
                 // uid = ref.push().getKey();
                 ref.child(uid).setValue(hair_makeup);
             }
@@ -131,6 +151,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("outfit");
                 Map outfit = new HashMap();
                 outfit.put("name",sname);
+                outfit.put("key",uid);
+                outfit.put("licence_no", slic);
+                outfit.put("address", sadd);
+                outfit.put("district", sdistrict);
+                outfit.put("category", scategory);
+                outfit.put("min_budget", sminbudget);
+                outfit.put("max_budget", smaxbudget);
+                outfit.put("location", slocation);
+                outfit.put("email_id", semail);
+                outfit.put("phone", sphone);
                 //uid = ref.push().getKey();
                 ref.child(uid).setValue(outfit);
             }
@@ -141,6 +171,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("entertainment");
                 Map entertainment = new HashMap();
                 entertainment.put("name",sname);
+                entertainment.put("key",uid);
+                entertainment.put("licence_no", slic);
+                entertainment.put("address", sadd);
+                entertainment.put("district", sdistrict);
+                entertainment.put("category", scategory);
+                entertainment.put("min_budget", sminbudget);
+                entertainment.put("max_budget", smaxbudget);
+                entertainment.put("location", slocation);
+                entertainment.put("email_id", semail);
+                entertainment.put("phone", sphone);
                 //uid = ref.push().getKey();
                 ref.child(uid).setValue(entertainment);
             }
@@ -151,6 +191,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("catering");
                 Map catering = new HashMap();
                 catering.put("name",sname);
+                catering.put("key",uid);
+                catering.put("licence_no", slic);
+                catering.put("address", sadd);
+                catering.put("district", sdistrict);
+                catering.put("category", scategory);
+                catering.put("min_budget", sminbudget);
+                catering.put("max_budget", smaxbudget);
+                catering.put("location", slocation);
+                catering.put("email_id", semail);
+                catering.put("phone", sphone);
                 //uid = ref.push().getKey();
                 ref.child(uid).setValue(catering);
             }
@@ -161,6 +211,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("transportation");
                 Map transportation = new HashMap();
                 transportation.put("name",sname);
+                transportation.put("key",uid);
+                transportation.put("licence_no", slic);
+                transportation.put("address", sadd);
+                transportation.put("district", sdistrict);
+                transportation.put("category", scategory);
+                transportation.put("min_budget", sminbudget);
+                transportation.put("max_budget", smaxbudget);
+                transportation.put("location", slocation);
+                transportation.put("email_id", semail);
+                transportation.put("phone", sphone);
                 //uid = ref.push().getKey();
                 ref.child(uid).setValue(transportation);
             }
@@ -171,6 +231,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("invitation");
                 Map invitation = new HashMap();
                 invitation.put("name",sname);
+                invitation.put("key",uid);
+                invitation.put("licence_no", slic);
+                invitation.put("address", sadd);
+                invitation.put("district", sdistrict);
+                invitation.put("category", scategory);
+                invitation.put("min_budget", sminbudget);
+                invitation.put("max_budget", smaxbudget);
+                invitation.put("location", slocation);
+                invitation.put("email_id", semail);
+                invitation.put("phone", sphone);
                 // uid = ref.push().getKey();
                 ref.child(uid).setValue(invitation);
             }
@@ -181,6 +251,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("media");
                 Map media = new HashMap();
                 media.put("name",sname);
+                media.put("key",uid);
+                media.put("licence_no", slic);
+                media.put("address", sadd);
+                media.put("district", sdistrict);
+                media.put("category", scategory);
+                media.put("min_budget", sminbudget);
+                media.put("max_budget", smaxbudget);
+                media.put("location", slocation);
+                media.put("email_id", semail);
+                media.put("phone", sphone);
                 // uid = ref.push().getKey();
                 ref.child(uid).setValue(media);
             }
@@ -191,6 +271,16 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("cakes_desserts");
                 Map cakes_desserts = new HashMap();
                 cakes_desserts.put("name",sname);
+                cakes_desserts.put("key",uid);
+                cakes_desserts.put("licence_no", slic);
+                cakes_desserts.put("address", sadd);
+                cakes_desserts.put("district", sdistrict);
+                cakes_desserts.put("category", scategory);
+                cakes_desserts.put("min_budget", sminbudget);
+                cakes_desserts.put("max_budget", smaxbudget);
+                cakes_desserts.put("location", slocation);
+                cakes_desserts.put("email_id", semail);
+                cakes_desserts.put("phone", sphone);
                 // uid = ref.push().getKey();
                 ref.child(uid).setValue(cakes_desserts);
             }
@@ -201,30 +291,40 @@ public class profile extends AppCompatActivity {
                 ref = database.getReference("miscellaneous");
                 Map miscellaneous = new HashMap();
                 miscellaneous.put("name",sname);
+                miscellaneous.put("key",uid);
+                miscellaneous.put("licence_no", slic);
+                miscellaneous.put("address", sadd);
+                miscellaneous.put("district", sdistrict);
+                miscellaneous.put("category", scategory);
+                miscellaneous.put("min_budget", sminbudget);
+                miscellaneous.put("max_budget", smaxbudget);
+                miscellaneous.put("location", slocation);
+                miscellaneous.put("email_id", semail);
+                miscellaneous.put("phone", sphone);
                 // uid = ref.push().getKey();
                 ref.child(uid).setValue(miscellaneous);
             }
 
             EditText s_minbudget = (EditText) findViewById(R.id.s_minbudget);
-            String sminbudget = s_minbudget.getText().toString();
+            sminbudget = s_minbudget.getText().toString();
 
             EditText s_maxbudget = (EditText) findViewById(R.id.s_maxbudget);
-            String smaxbudget = s_maxbudget.getText().toString();
+            smaxbudget = s_maxbudget.getText().toString();
 
             Spinner s_district = (Spinner) findViewById(R.id.s_district);
-            String sdistrict = s_district.getSelectedItem().toString();
+            sdistrict = s_district.getSelectedItem().toString();
 
             EditText s_lic = (EditText) findViewById(R.id.s_lic );
-            String slic  = s_lic .getText().toString();
+            slic  = s_lic .getText().toString();
 
             EditText s_location = (EditText) findViewById(R.id.s_location);
-            String slocation = s_location.getText().toString();
+            slocation = s_location.getText().toString();
 
             EditText s_email = (EditText) findViewById(R.id.s_email);
-            String semail = s_email.getText().toString();
+            semail = s_email.getText().toString();
 
             EditText s_phone = (EditText) findViewById(R.id.s_phone);
-            String sphone = s_phone.getText().toString();
+            sphone = s_phone.getText().toString();
 
             if(TextUtils.isEmpty(sname)) {
                 Toast.makeText(this, "plz enter the name ", Toast.LENGTH_SHORT).show();
@@ -275,6 +375,7 @@ public class profile extends AppCompatActivity {
             ref = database.getReference("service_provider");
 
             final Map service_provider = new HashMap();
+            service_provider.put("key",uid);
             service_provider.put("name", sname);
             service_provider.put("licence_no", slic);
             service_provider.put("address", sadd);

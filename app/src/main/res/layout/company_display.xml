@@ -1,156 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.project.fiesta2.company_display">
+    tools:context="com.example.project.fiesta2.company_display"
+    android:orientation="horizontal">
 
-    <ListView
-        android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:id="@+id/image"
-                android:maxHeight="300dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="305dp"
-                android:id="@+id/dname"
-                android:textAlignment="center"
-                android:textColorHighlight="@color/colorPrimaryDark"
-                android:textSize="25sp"
-                android:text="Company Details"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="350dp"
-                android:text="Address:"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:id="@+id/dadd"
-                android:layout_marginTop="385dp"
-                android:textSize="15sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="415dp"
-                android:text="Location"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/image"
+            android:maxHeight="300dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="305dp"
+            android:id="@+id/dname"
+            android:textAlignment="center"
+            android:textColorHighlight="#000"
+            android:textSize="25sp"
+            android:text="Company Details"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="350dp"
+            android:text="Address:"
+            android:textSize="18sp"
+            android:textColor="#000"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dadd"
+            android:layout_marginTop="385dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="415dp"
+            android:text="Location"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-            <TextView
-                android:id="@+id/dloc"
-                android:layout_width="140dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="450dp"
-                android:textAlignment="textEnd"
-                android:textSize="15sp" />
+        <TextView
+            android:id="@+id/dloc"
+            android:layout_width="140dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="450dp"
+            android:textAlignment="textEnd"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="415dp"
-                android:text="District"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="480dp"
+            android:text="District"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="450dp"
-                android:layout_marginLeft="190dp"
-                android:textSize="15sp"
-                android:id="@+id/ddis"
-                android:textAlignment="textStart"
-                />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginLeft="190dp"
+            android:textSize="15sp"
+            android:id="@+id/ddis"
+            android:textAlignment="textStart"
+            android:textColor="#000"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="480dp"
-                android:text="Categories"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:id="@+id/dcat"
-                android:layout_marginTop="515dp"
-                android:textSize="15sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="480dp"
-                android:text="Minimum Budget"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:id="@+id/dmin_bud"
-                android:layout_marginTop="515dp"
-                android:textSize="15sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="540dp"
+            android:text="Categories"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="480dp"
-                android:text="Maximum Budget"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:id="@+id/dmax_bud"
-                android:layout_marginTop="515dp"
-                android:textSize="15sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dcat"
+            android:layout_marginTop="570dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="480dp"
-                android:text="Email id"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:id="@+id/demail"
-                android:layout_marginTop="515dp"
-                android:textSize="15sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="600dp"
+            android:text="Minimum Budget"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_marginTop="480dp"
-                android:text="Contact Number"
-                android:textSize="18sp"
-                android:textColor="#000"
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:id="@+id/dphone"
-                android:layout_marginTop="515dp"
-                android:textSize="15sp"/>
-        </RelativeLayout>
-    </ListView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dmin_bud"
+            android:layout_marginTop="630dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="660dp"
+            android:text="Maximum Budget"
+            android:textSize="18sp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dmax_bud"
+            android:layout_marginTop="690dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="720dp"
+            android:text="Email id"
+            android:textSize="18sp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/demail"
+            android:layout_marginTop="750dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="780dp"
+            android:text="Contact Number"
+            android:textSize="18sp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dphone"
+            android:layout_marginTop="810dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -29,12 +29,10 @@ public class choose extends AppCompatActivity implements View.OnClickListener{
         option=spinner.getSelectedItem().toString();
         Toast.makeText(choose.this,option.toString(), Toast.LENGTH_SHORT).show();
         if(option.equals("Client")){
-            finish();
             Intent intent = new Intent(choose.this,client.class);
             startActivity(intent);
         }
         if(option.equals("Service Provider")){
-            finish();
             Intent intent = new Intent(choose.this,server.class);
             startActivity(intent);
         }

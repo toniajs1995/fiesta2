@@ -43,17 +43,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         final Companies companies = company.get(position);
         holder.textViewName.setText(companies.getName());
        // holder.textViewPrice.setText(companies.getPrice());
-
         Glide.with(context).load(companies.getImage()).into(holder.imageView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                String uid=user.getUid();
-                Toast.makeText(context, "Key" + uid, Toast.LENGTH_SHORT).show();
+               // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+               // String uid=user.getUid();
+                String str=companies.getKey();
+                Toast.makeText(context, "Key" + str, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context,company_display.class);
-                intent.putExtra("key",uid);
+                intent.putExtra("key",str);
                 context.startActivity(intent);
             }
         });

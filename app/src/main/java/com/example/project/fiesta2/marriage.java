@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class marriage extends AppCompatActivity {
 
-    Button loc,bud;
+    Button search_budget,search_location;
     ImageButton imagedeco,imagecat,imagemake,imagetrans,imageout,imagemis,imagemedia,imagecake,imageenter;
 
     @Override
@@ -19,8 +19,8 @@ public class marriage extends AppCompatActivity {
 
         try {
 
-            loc = (Button) findViewById(R.id.loc);
-            loc.setOnClickListener(new View.OnClickListener() {
+            search_location = (Button) findViewById(R.id.search_location);
+            search_location.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(marriage.this, location.class);
@@ -28,8 +28,8 @@ public class marriage extends AppCompatActivity {
                 }
             });
 
-            bud = (Button) findViewById(R.id.bud);
-            bud.setOnClickListener(new View.OnClickListener() {
+            search_budget= (Button) findViewById(R.id.search_budget);
+            search_budget.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(marriage.this, budget.class);
@@ -50,8 +50,8 @@ public class marriage extends AppCompatActivity {
             imagecat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //Intent i = new Intent(MarriageActivity.this, Catering.class);
-                    //startActivity(i);
+                    Intent i = new Intent(marriage.this, cat.class);
+                    startActivity(i);
                     // Toast.makeText(Home.this,"View caters",Toast.LENGTH_LONG).show();
                 }
             });
