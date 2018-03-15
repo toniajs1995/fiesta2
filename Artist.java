@@ -14,7 +14,7 @@ public class Artist {
 
     }
 
-    public Artist(String comments, String artistid) {
+    public Artist( String artistid,String comments) {
 
         this.artistid = artistid;
         this.comments = comments;
