@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hp.ratingbar.MainActivity">
+
+    <TextView
+        android:id="@+id/lblRateMe"
+        android:layout_width="214dp"
+        android:layout_height="42dp"
+        android:text="Rate Me"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="13dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="241dp"
+        android:layout_height="60dp"
+        android:numStars="5"
+        android:rating="2.0"
+        android:stepSize="1"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="88dp" />
+
+
+    <TextView
+        android:id="@+id/txtRatingValue"
+        android:layout_width="93dp"
+        android:layout_height="50dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/btnInsert"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:text="Submit"
+        android:onClick="btnInsert"/>
+
+
+</LinearLayout>
