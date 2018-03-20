@@ -23,19 +23,13 @@
         android:hint="Click to enter date" />
 
     <Button
+        android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button3"
         android:layout_marginTop="10dp"
-        android:text="insert" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Birthday"
-        android:layout_marginTop="70dp"
-        android:text="finish" />
+        android:text="submit"
+        tools:ignore="UnknownId" />
 
 
 </RelativeLayout>

@@ -1,8 +1,12 @@
 package com.example.project.fiesta2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,27 +19,44 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class prof_display extends AppCompatActivity {
 
     TextView dname, dlic_no, dadd, dloc, ddis, dmin_bud, dmax_bud, dcat, demail, dphone, devent1, devent2,ddate;
     String uid, name, lic_no, add, loc, dis, min_bud, max_bud, cat, email, phone, event1, event2;
-    ImageButton icon;
-    DatabaseReference mdatabase;
+    Button update;
+    ImageView image;
+    DatabaseReference mdatabase,ref;
+    FirebaseDatabase db;
+    List<Companies> company;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prof_display);
 
+        update=(Button)findViewById(R.id.update);
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(prof_display.this, update.class);
+                startActivity(i);
+            }
+        });
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
-        Toast.makeText(this, uid.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, uid.toString(), Toast.LENGTH_SHORT).show();
+        company=new ArrayList<>();
+        mdatabase=FirebaseDatabase.getInstance().getReference("service_provider");
+        ref=mdatabase.child(uid);
 
-        mdatabase = FirebaseDatabase.getInstance().getReference().child("service_provider").child(uid);
         if (uid != null) {
 
             dname = (TextView) findViewById(R.id.dname);
-            dlic_no = (TextView) findViewById(R.id.dlic_no);
+          //  dlic_no = (TextView) findViewById(R.id.dlic_no);
             dadd = (TextView) findViewById(R.id.dadd);
             dloc = (TextView) findViewById(R.id.dloc);
             ddis = (TextView) findViewById(R.id.ddis);
@@ -46,27 +67,31 @@ public class prof_display extends AppCompatActivity {
             dphone = (TextView) findViewById(R.id.dphone);
             devent1 = (TextView) findViewById(R.id.devent1);
             devent2 = (TextView) findViewById(R.id.devent2);
+            image=findViewById(R.id.image);
             //Toast.makeText(this,uid.toString(), Toast.LENGTH_SHORT).show();
 
             mdatabase.addValueEventListener(new ValueEventListener() {
 
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                   // Glide.with(this).load(companies.getImage()).into(imageView);
-                    name = dataSnapshot.child("name").getValue().toString();
-                    lic_no = dataSnapshot.child("licence_no").getValue().toString();
-                    add = dataSnapshot.child("address").getValue().toString();
-                    loc = dataSnapshot.child("location").getValue().toString();
-                    dis = dataSnapshot.child("district").getValue().toString();
-                    cat = dataSnapshot.child("category").getValue().toString();
-                    min_bud = dataSnapshot.child("min_budget").getValue().toString();
-                    max_bud = dataSnapshot.child("max_budget").getValue().toString();
-                    email = dataSnapshot.child("email_id").getValue().toString();
-                    phone = dataSnapshot.child("phone").getValue().toString();
-                    // String event1 = dataSnapshot.child("event1").getValue().toString();
-                    // String event2 = dataSnapshot.child("event2").getValue().toString();
+                    for (DataSnapshot shot : dataSnapshot.getChildren()) {
+                        Companies companies = shot.getValue(Companies.class);
 
+                        if (companies.getKey().equals(uid)) {
+                            //Toast.makeText(prof_display.this, companies.getName().toString(), Toast.LENGTH_SHORT).show();
+                            dname.setText(companies.getName());
+                            dadd.setText(companies.getAddress());
+                            dloc.setText(companies.getLocation());
+                            ddis.setText(companies.getDistrict());
+                            dcat.setText(companies.getCategory());
+                            dmin_bud.setText(companies.getMin_budget());
+                            dmax_bud.setText(companies.getMax_budget());
+                            demail.setText(companies.getEmail_id());
+                            dphone.setText(companies.getPhone());
+                            Glide.with(prof_display.this).load(companies.getImage()).into(image);
 
+                        }
+                        }
                 }
 
                 @Override
@@ -75,66 +100,6 @@ public class prof_display extends AppCompatActivity {
                 }
             });
 
-            dname.setText(name);
-            dlic_no.setText(lic_no);
-            dadd.setText(add);
-            dloc.setText(loc);
-            ddis.setText(dis);
-            dcat.setText(cat);
-            dmin_bud.setText(min_bud);
-            dmax_bud.setText(max_bud);
-            demail.setText(email);
-            dphone.setText(phone);
         }
-
-        mdatabase = FirebaseDatabase.getInstance().getReference().child("events").child(uid);
-        if (uid != null) {
-
-            devent1 = (TextView) findViewById(R.id.devent1);
-            devent2 = (TextView) findViewById(R.id.devent2);
-            //Toast.makeText(this,uid.toString(), Toast.LENGTH_SHORT).show();
-
-            mdatabase.addValueEventListener(new ValueEventListener() {
-
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    String event1 = dataSnapshot.child("event1").getValue().toString();
-                    String event2 = dataSnapshot.child("event2").getValue().toString();
-
-
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-            devent1.setText(event1);
-            devent2.setText(event2);
-        }
-        mdatabase = FirebaseDatabase.getInstance().getReference().child("dates").child(uid);
-        if (uid != null) {
-
-            ddate = (TextView) findViewById(R.id.ddate);
-
-            mdatabase.addValueEventListener(new ValueEventListener() {
-
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-
-                    String ddate = dataSnapshot.child("date").getValue().toString();
-                  }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
-            ddate.setText(event1);
-            //devent2.setText(event2);
-        }
-
-
     }
 }

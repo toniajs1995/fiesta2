@@ -1,5 +1,6 @@
 package com.example.project.fiesta2;
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 /**
  * Created by Lenovo on 2/20/2018.
@@ -59,6 +61,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+       // String[] parts = company.getCategory().split(Pattern.quote(",")); // Split on period.
         viewHolder.dname.setText(company.getName());
         viewHolder.dadd.setText(company.getAddress());
         viewHolder.dloc.setText(company.getLocation());

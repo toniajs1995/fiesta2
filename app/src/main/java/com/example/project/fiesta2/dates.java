@@ -41,7 +41,7 @@ public class dates extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
-
+        submit=(Button)findViewById(R.id.submit) ;
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +67,7 @@ public class dates extends AppCompatActivity {
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 String date=sdformat.format(myCalendar.getTime());
                 edittext.append(date+",");
+                uid=edittext.getText().toString();
             }
 
         };
@@ -90,12 +91,12 @@ public class dates extends AppCompatActivity {
         storageReference = storage.getReference();
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        String date=edittext.getText().toString();
+        //String date=edittext.getText().toString();
         ref = database.getReference("service_provider/"+uid);
         String key= ref.push().getKey();
         final Map service_provider = new HashMap();
 
-        service_provider.put("dates", date);
+        service_provider.put("dates", uid);
         ref.child(key).setValue(service_provider);
         Toast.makeText(dates.this,"Inserted", Toast.LENGTH_SHORT).show();
     }

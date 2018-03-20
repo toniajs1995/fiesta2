@@ -39,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/dadd"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="385dp"
             android:textSize="15sp"
             android:textColor="#000"/>
@@ -52,10 +53,10 @@
 
         <TextView
             android:id="@+id/dloc"
-            android:layout_width="140dp"
+            android:layout_width="match_parent"
             android:layout_height="25dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="450dp"
-            android:textAlignment="textEnd"
             android:textSize="15sp"
             android:textColor="#000"/>
 
@@ -68,18 +69,17 @@
             android:textColor="#000" />
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="25dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="510dp"
-            android:layout_marginLeft="190dp"
             android:textSize="15sp"
             android:id="@+id/ddis"
-            android:textAlignment="textStart"
             android:textColor="#000"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="540dp"
             android:text="Categories"
             android:textSize="18sp"
@@ -89,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/dcat"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="570dp"
             android:textSize="15sp"
             android:textColor="#000"/>
@@ -105,6 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/dmin_bud"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="630dp"
             android:textSize="15sp"
             android:textColor="#000"/>
@@ -121,6 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/dmax_bud"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="690dp"
             android:textSize="15sp"
             android:textColor="#000"/>
@@ -153,7 +156,51 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/dphone"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="810dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="840dp"
+            android:text="Recent Events"
+            android:textSize="18sp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/devent1"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="870dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/devent2"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="870dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="900dp"
+            android:text="Booked Dates"
+            android:textSize="18sp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/ddates"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="930dp"
             android:textSize="15sp"
             android:textColor="#000"/>
 

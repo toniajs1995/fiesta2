@@ -1,83 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.example.project.fiesta2.company_display"
+    android:orientation="horizontal">
 
-    <TextView
+
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PROFILE"
-        android:textSize="30sp"/>
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/icon"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColorHighlight="#000"
+            android:textSize="25sp"
+            android:text="PROFILE"/>
 
-    <TextView
-        android:id="@+id/dname"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/image"
+            android:layout_marginTop="55dp"
+            android:maxHeight="300dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="370dp"
+            android:textSize="18sp"
+            android:text="Company Name:"
+            android:textColor="#000"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dname"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="400dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="430dp"
+            android:text="Address:"
+            android:textSize="18sp"
+            android:textColor="#000"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dadd"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="460dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="490dp"
+            android:text="Location"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dlic_no"/>
+        <TextView
+            android:id="@+id/dloc"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="520dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/ddis"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="550dp"
+            android:text="District"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dloc"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="580dp"
+            android:textSize="15sp"
+            android:id="@+id/ddis"
+            android:textColor="#000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dadd"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="610dp"
+            android:text="Categories"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dmin_bud"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dcat"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="640dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dmax_bud"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="670dp"
+            android:text="Minimum Budget"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dcat"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dmin_bud"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="700dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/demail"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+           android:layout_marginTop="730dp"
+            android:text="Maximum Budget"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/dphone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dmax_bud"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="760dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/devent1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="790dp"
+            android:text="Email id"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/devent2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/demail"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="820dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/ddate"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="850dp"
+            android:text="Contact Number"
+            android:textSize="18sp"
+            android:textColor="#000" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/dphone"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="880dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="910dp"
+            android:text="Recent Events"
+            android:textSize="18sp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/devent1"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="940dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/devent2"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="970dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="1000dp"
+            android:text="Booked Dates"
+            android:textSize="18sp"
+            android:textColor="#000" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ddate"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="1030dp"
+            android:textSize="15sp"
+            android:textColor="#000"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="update profile"
+            android:gravity="center"
+            android:layout_marginTop="1060dp"
+            android:id="@+id/update"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

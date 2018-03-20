@@ -33,14 +33,7 @@ public class server extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button view_prof=(Button)findViewById(R.id.view_prof);
-        view_prof.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(server.this, prof_display.class);
-                startActivity(i);
-            }
-        });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -100,8 +93,11 @@ public class server extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+           // Intent intent = new Intent(server.this,review.class);
+           // startActivity(intent);
             return true;
         }
 

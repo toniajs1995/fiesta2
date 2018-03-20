@@ -27,7 +27,7 @@ public class choose extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view){
         String option;
         option=spinner.getSelectedItem().toString();
-        Toast.makeText(choose.this,option.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(choose.this,option.toString(), Toast.LENGTH_SHORT).show();
         if(option.equals("Client")){
             Intent intent = new Intent(choose.this,client.class);
             startActivity(intent);

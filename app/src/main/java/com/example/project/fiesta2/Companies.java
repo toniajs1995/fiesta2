@@ -15,7 +15,7 @@ public class Companies {
     public String min_budget;
     public String max_budget;
     public String image;
-    public String license_no;
+    public String licence_no;
     public String phone;
     public String district;
     public String category;
@@ -23,7 +23,7 @@ public class Companies {
     public Companies() {
     }
 
-    public Companies(String key,String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String license_no, String phone, String district, String category) {
+    public Companies(String key,String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String licence_no, String phone, String district, String category) {
         this.key=key;
         this.name = name;
         this.address = address;
@@ -32,7 +32,7 @@ public class Companies {
         this.min_budget = min_budget;
         this.max_budget = max_budget;
         this.image = image;
-        this.license_no = license_no;
+        this.licence_no = licence_no;
         this.phone = phone;
         this.district = district;
         this.category = category;
@@ -56,8 +56,8 @@ public class Companies {
 
     public String getMax_budget() {return max_budget;}
 
-    public String getLicense_no() {
-        return license_no;
+    public String getLicence_no() {
+        return licence_no;
     }
 
     public String getPhone() {
