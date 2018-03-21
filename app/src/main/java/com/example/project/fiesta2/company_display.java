@@ -3,6 +3,8 @@ package com.example.project.fiesta2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -24,7 +26,7 @@ public class company_display extends AppCompatActivity {
     private ArrayList<Companies> companies;
     DatabaseReference mDatabase;
     TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
-    String uid,str;
+    String uid,str,key;
     ImageView image;
     DisplayAdapter adapter;
     ListView listView;
@@ -37,7 +39,7 @@ public class company_display extends AppCompatActivity {
        // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         //uid = user.getUid();
         listView=(ListView)findViewById(R.id.list);
-        final String key = getIntent().getStringExtra("key");
+        key = getIntent().getStringExtra("key");
         dname = (TextView) findViewById(R.id.dname);
         //dlic_no = (TextView) findViewById(R.id.dlic_no);
         dadd = (TextView) findViewById(R.id.dadd);
@@ -56,7 +58,7 @@ public class company_display extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 companies=new ArrayList<>();
                 DataSnapshot snap=snapshot.child("decoration");
-                Toast.makeText(company_display.this, "Key "+snapshot.getKey(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(company_display.this, "Key "+snapshot.getKey(), Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
                 adapter= new DisplayAdapter(companies,getApplicationContext());
@@ -71,6 +73,14 @@ public class company_display extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.server, menu);
+        return true;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -78,11 +88,11 @@ public class company_display extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(company_display.this,review.class);
-            intent.putExtra("key",str);
+            intent.putExtra("key",key);
+            Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }

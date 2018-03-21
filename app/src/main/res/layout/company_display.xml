@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="415dp"
-            android:text="Location"
+            android:text="Location:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="480dp"
-            android:text="District"
+            android:text="District:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="540dp"
-            android:text="Categories"
+            android:text="Categories:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="600dp"
-            android:text="Minimum Budget"
+            android:text="Minimum Budget:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -115,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="660dp"
-            android:text="Maximum Budget"
+            android:text="Maximum Budget:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -132,7 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="720dp"
-            android:text="Email id"
+            android:text="Email id:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -140,6 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/demail"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="750dp"
             android:textSize="15sp"
             android:textColor="#000"/>
@@ -148,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="780dp"
-            android:text="Contact Number"
+            android:text="Contact Number:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -165,7 +166,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="840dp"
-            android:text="Recent Events"
+            android:text="Recent Events:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -191,7 +192,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="900dp"
-            android:text="Booked Dates"
+            android:text="Booked Dates:"
             android:textSize="18sp"
             android:textColor="#000" />
 

@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,9 +35,10 @@ public class review extends AppCompatActivity {
         setContentView(R.layout.activity_review);
         
         final String key = getIntent().getStringExtra("key");
+        Toast.makeText(review.this, key, Toast.LENGTH_SHORT).show();
         FirebaseDatabase database=FirebaseDatabase.getInstance();
 
-        databaseArtist= database.getInstance().getReference("review/"+uid);
+        databaseArtist= database.getInstance().getReference("review/"+key);
 
 
         comments=(EditText)findViewById(R.id.editText);
@@ -78,12 +81,13 @@ public class review extends AppCompatActivity {
     }
 
     private void addArtist(){
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String email = user.getEmail();
 
         String name= comments.getText().toString().trim();
         if(!TextUtils.isEmpty(name)){
             uid= databaseArtist.push().getKey();
-            Artist artist=new Artist(uid,name);
+            Artist artist=new Artist(email,name);
             databaseArtist.child(uid).setValue(artist);
 
             Toast.makeText(this,"review added",Toast.LENGTH_SHORT).show();

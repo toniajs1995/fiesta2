@@ -6,10 +6,12 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="Reviews"
-        app:showAsAction="never" />
+        app:showAsAction="always"
+        android:visible="true"/>
+
     <item
         android:id="@+id/action_settings1"
         android:orderInCategory="100"
-        android:title="Rating"
-        app:showAsAction="never" />
+        android:title="Ratings"
+        app:showAsAction="always" />
 </menu>

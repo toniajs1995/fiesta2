@@ -5,12 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-        android:layout_height="39dp"
-        android:layout_width="361dp"
-        tools:layout_editor_absoluteY="30dp"
-        tools:layout_editor_absoluteX="16dp"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="TextView"
-        android:id="@+id/textView2"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="11dp"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="361dp"
+        android:layout_height="39dp"
+        android:text="TextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="41dp" />
 
 </android.support.constraint.ConstraintLayout>

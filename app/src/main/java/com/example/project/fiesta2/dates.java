@@ -31,7 +31,7 @@ public class dates extends AppCompatActivity {
     EditText edittext;
     FirebaseDatabase mdatabase;
     DatabaseReference ref;
-    String uid;
+    String uid,dates;
     Calendar myCalendar;
 
     @Override
@@ -67,7 +67,7 @@ public class dates extends AppCompatActivity {
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 String date=sdformat.format(myCalendar.getTime());
                 edittext.append(date+",");
-                uid=edittext.getText().toString();
+                dates=edittext.getText().toString();
             }
 
         };
@@ -96,7 +96,7 @@ public class dates extends AppCompatActivity {
         String key= ref.push().getKey();
         final Map service_provider = new HashMap();
 
-        service_provider.put("dates", uid);
+        service_provider.put("dates", dates);
         ref.child(key).setValue(service_provider);
         Toast.makeText(dates.this,"Inserted", Toast.LENGTH_SHORT).show();
     }

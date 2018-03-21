@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.List;
 
 /**
@@ -31,15 +34,19 @@ public class ArtistList2 extends ArrayAdapter<Artist> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater=context.getLayoutInflater();
 
+
+
+
         View listViewItem = inflater.inflate(R.layout.listlayout2,null,true);
 
-
+        TextView textViewEmail=(TextView)listViewItem.findViewById(R.id.textView1);
         TextView textViewName= (TextView)listViewItem.findViewById(R.id.textView2);
 
 
         Artist artist =artistList2.get(position);
 
-        textViewName.setText(artist.getArtistid());
+        textViewEmail.setText(artist.getArtistid());
+        textViewName.setText(artist.getComments());
 
 
         return listViewItem;
