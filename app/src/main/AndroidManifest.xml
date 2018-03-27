@@ -34,9 +34,12 @@
         <activity android:name=".dates" />
         <activity android:name=".company_display" />
         <activity android:name=".prof_display" />
-        <activity android:name=".cat" />
         <activity android:name=".review" />
-        <activity android:name=".update"></activity>
+        <activity android:name=".update" />
+        <activity android:name=".rating" />
+        <activity android:name=".bookmark" />
+        <activity android:name=".review_dis" />
+        <activity android:name=".rating_dis"></activity>
     </application>
 
 </manifest>

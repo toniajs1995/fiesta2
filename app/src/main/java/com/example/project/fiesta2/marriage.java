@@ -50,8 +50,8 @@ public class marriage extends AppCompatActivity {
             imagecat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, cat.class);
-                    startActivity(i);
+                  //  Intent i = new Intent(marriage.this, cat.class);
+                 //   startActivity(i);
                     // Toast.makeText(Home.this,"View caters",Toast.LENGTH_LONG).show();
                 }
             });

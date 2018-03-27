@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.project.fiesta2.rating">
+
+    <TextView
+        android:layout_height="42dp"
+        android:layout_width="214dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Rate Me"
+        android:id="@+id/lblRateMe"/>
+
+    <RatingBar
+        android:layout_height="60dp"
+        android:layout_width="241dp"
+        android:id="@+id/ratingBar"
+        android:stepSize="1"
+        android:rating="1.0"
+        android:numStars="5"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_height="50dp"
+        android:layout_width="93dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:id="@+id/txtRatingValue"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="275dp"/>
+
+    <Button
+        android:layout_height="61dp"
+        android:layout_width="match_parent"
+        android:text="Submit"
+        android:id="@+id/btnInsert"
+        android:onClick="btnInsert"
+        android:layout_marginTop="175dp"/>
+
+</RelativeLayout>

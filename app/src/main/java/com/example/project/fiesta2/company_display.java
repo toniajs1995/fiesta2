@@ -58,7 +58,7 @@ public class company_display extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 companies=new ArrayList<>();
                 DataSnapshot snap=snapshot.child("decoration");
-                //Toast.makeText(company_display.this, "Key "+snapshot.getKey(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
                 adapter= new DisplayAdapter(companies,getApplicationContext());
@@ -77,7 +77,7 @@ public class company_display extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.server, menu);
+        getMenuInflater().inflate(R.menu.company_display, menu);
         return true;
     }
 
@@ -92,11 +92,17 @@ public class company_display extends AppCompatActivity {
         if (id == R.id.action_settings) {
             Intent intent = new Intent(company_display.this,review.class);
             intent.putExtra("key",key);
-            Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
-
+        if (id == R.id.action_settings1) {
+            Intent intent = new Intent(company_display.this,rating.class);
+            intent.putExtra("key",key);
+          //  Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

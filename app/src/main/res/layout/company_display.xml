@@ -26,7 +26,8 @@
             android:textAlignment="center"
             android:textColorHighlight="#000"
             android:textSize="25sp"
-            android:text="Company Details"/>
+            android:text="Company Details"
+            android:textColor="#000"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -204,6 +205,13 @@
             android:layout_marginTop="930dp"
             android:textSize="15sp"
             android:textColor="#000"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bookmark"
+            android:layout_marginTop="960dp"
+            android:id="@+id/bookmark"/>
 
     </RelativeLayout>
 

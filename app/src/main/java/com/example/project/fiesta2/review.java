@@ -1,5 +1,6 @@
 package com.example.project.fiesta2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,7 +25,7 @@ public class review extends AppCompatActivity {
 
     EditText comments;
     Button submit;
-    String uid;
+    String uid,key;
     DatabaseReference databaseArtist;
     ListView listViewArtists;
     List<Artist> artistList2;
@@ -34,8 +35,8 @@ public class review extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
         
-        final String key = getIntent().getStringExtra("key");
-        Toast.makeText(review.this, key, Toast.LENGTH_SHORT).show();
+         key = getIntent().getStringExtra("key");
+       // Toast.makeText(review.this, key, Toast.LENGTH_SHORT).show();
         FirebaseDatabase database=FirebaseDatabase.getInstance();
 
         databaseArtist= database.getInstance().getReference("review/"+key);
@@ -67,6 +68,7 @@ public class review extends AppCompatActivity {
                     Artist artist =artistSnapshot.getValue(Artist.class);
 
                     artistList2.add(artist);
+
                 }
                 ArtistList2 adapter=new ArtistList2(review.this,artistList2);
                 listViewArtists.setAdapter(adapter);
@@ -89,7 +91,6 @@ public class review extends AppCompatActivity {
             uid= databaseArtist.push().getKey();
             Artist artist=new Artist(email,name);
             databaseArtist.child(uid).setValue(artist);
-
             Toast.makeText(this,"review added",Toast.LENGTH_SHORT).show();
         }
     }

@@ -1,30 +1,36 @@
 package com.example.project.fiesta2;
 
 import android.app.ProgressDialog;
+import android.database.DataSetObserver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
 
-import com.google.firebase.database.ChildEventListener;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class cat extends AppCompatActivity {
+public class bookmark extends AppCompatActivity {
 
-    //recyclerview object
     private RecyclerView recyclerView;
 
     //adapter object
     private RecyclerView.Adapter adapter;
 
     //database reference
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase,ref;
 
     //progress dialog
     private ProgressDialog progressDialog;
@@ -35,8 +41,10 @@ public class cat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cat);
+        setContentView(R.layout.activity_bookmark);
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String uid = user.getUid();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -50,39 +58,33 @@ public class cat extends AppCompatActivity {
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("catering");
+        mDatabase.child("bookmark");
 
         //adding an event listener to fetch values
-        mDatabase.addChildEventListener(new ChildEventListener() {
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot snapshot, String s) {
+            public void onDataChange(DataSnapshot snapshot) {
                 //dismissing the progress dialog
                 progressDialog.dismiss();
-                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
-                    Companies companies = postSnapshot.getValue( Companies.class);
-                    company.add(companies);
+                DataSnapshot snap=snapshot.child("bookmark/"+uid);
+
+                for (DataSnapshot postSnapshot : snap.getChildren()) {
+
+                    String name=postSnapshot.child("name").getValue().toString();
+                    ref = FirebaseDatabase.getInstance().getReference();
+                    ref.child("service_provider");
+                    DataSnapshot shot=snapshot.child("service_provider");
+                    String cmp=shot.child("name").getValue().toString();
+                    if(name.equals(cmp)){
+                        company.add((Companies) company);
+                    }
 
                 }
                 //creating adapter
-                adapter = new MyAdapter(getApplicationContext(), company);
+                //adapter = new Adapter(getApplicationContext(),company) ;
 
                 //adding adapter to recyclerview
-                recyclerView.setAdapter(adapter);
-
-            }
-            @Override
-            public void onChildChanged(DataSnapshot snapshot,String s)
-            {
-
-            }
-            @Override
-            public void onChildRemoved(DataSnapshot snapshot)
-            {
-
-            }
-            @Override
-            public void onChildMoved(DataSnapshot snapshot,String s)
-            {
+                //recyclerView.setAdapter(adapter);
 
             }
             @Override
@@ -90,5 +92,6 @@ public class cat extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
+
     }
 }

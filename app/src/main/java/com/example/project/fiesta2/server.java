@@ -96,11 +96,15 @@ public class server extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-           // Intent intent = new Intent(server.this,review.class);
-           // startActivity(intent);
+            Intent intent = new Intent(server.this,review_dis.class);
+            startActivity(intent);
             return true;
         }
-
+        if (id == R.id.action_settings1) {
+            Intent intent = new Intent(server.this,rating_dis.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

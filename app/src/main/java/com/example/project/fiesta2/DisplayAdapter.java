@@ -5,12 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
@@ -18,12 +26,14 @@ import java.util.regex.Pattern;
  */
 public class DisplayAdapter extends ArrayAdapter<Companies> {
 
+    DatabaseReference mDatabase;
     private Context context;
     private ArrayList<Companies> company;
 
     private static class ViewHolder {
         TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
         ImageView image;
+        Button bookmark;
     }
 
     public DisplayAdapter(ArrayList<Companies> data, Context context) {
@@ -35,9 +45,9 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        Companies company  = getItem(position);
+        final Companies company  = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
-        ViewHolder viewHolder; // view lookup cache stored in tag
+        final ViewHolder viewHolder; // view lookup cache stored in tag
         final View result;
         if (convertView == null) {
 
@@ -54,7 +64,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
             viewHolder.demail = (TextView) convertView.findViewById(R.id.demail);
             viewHolder.dphone = (TextView) convertView.findViewById(R.id.dphone);
             viewHolder.image = (ImageView) convertView.findViewById(R.id.image);
-
+            viewHolder.bookmark = (Button) convertView.findViewById(R.id.bookmark);
 
             convertView.setTag(viewHolder);
         } else {
@@ -74,6 +84,31 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
         //viewHolder.image.setText(company.getImage());
         Glide.with(context).load(company.getImage()).into(viewHolder.image);
         // Return the completed view to render on screen
+       viewHolder.bookmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // final String buy_qty = viewHolder.buy_quantity.getText().toString();
+                //final String prd_qty = products.getQuantity();
+                //double qnty = Double.parseDouble(buy_qty);
+                //double prdt_price = Double.parseDouble(products.getPrice());
+                //String tot_price = Double.toString(qnty*prdt_price);
+
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    String uid = user.getUid();
+                    Toast.makeText(context, "Company added to bookmarks", Toast.LENGTH_SHORT).show();
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/"+uid);
+                    String id=mDatabase.push().getKey();
+                    final Map bookmark = new HashMap();
+                    //cart.put("key",products.getrKey());
+
+                    bookmark.put("name",company.getName());
+                    bookmark.put("image",company.getImage());
+                    bookmark.put("bkey",id);
+                    mDatabase.child(id).setValue(bookmark);
+                    //mDatabase.child(uid).setValue(cart);
+
+            }
+        });
         return convertView;
     }
 }
