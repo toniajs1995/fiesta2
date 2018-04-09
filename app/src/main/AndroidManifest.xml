@@ -39,7 +39,9 @@
         <activity android:name=".rating" />
         <activity android:name=".bookmark" />
         <activity android:name=".review_dis" />
-        <activity android:name=".rating_dis"></activity>
+        <activity android:name=".cat" />
+        <activity android:name=".rating_dis" />
+        <activity android:name=".birthday"></activity>
     </application>
 
 </manifest>

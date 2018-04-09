@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class marriage extends AppCompatActivity {
+public class birthday extends AppCompatActivity {
 
     Button search_budget,search_location;
     ImageButton imagedeco,imagecat,imagemake,imagetrans,imageout,imagemis,imagemedia,imagecake,imageenter;
@@ -17,7 +17,7 @@ public class marriage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_marriage);
+        setContentView(R.layout.activity_birthday);
 
         try {
 
@@ -25,7 +25,7 @@ public class marriage extends AppCompatActivity {
             search_location.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, location.class);
+                    Intent i = new Intent(birthday.this, location.class);
                     startActivity(i);
                 }
             });
@@ -34,7 +34,7 @@ public class marriage extends AppCompatActivity {
             search_budget.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, budget.class);
+                    Intent i = new Intent(birthday.this, budget.class);
                     startActivity(i);
                 }
             });
@@ -43,7 +43,7 @@ public class marriage extends AppCompatActivity {
             imagedeco.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, deco.class);
+                    Intent i = new Intent(birthday.this, deco.class);
                     startActivity(i);
                 }
             });
@@ -52,25 +52,16 @@ public class marriage extends AppCompatActivity {
             imagecat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, cat.class);
+                    Intent i = new Intent(birthday.this, cat.class);
                     startActivity(i);
                 }
             });
 
-            imagemake = (ImageButton) findViewById(R.id.imagemake);
-            imagemake.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, make.class);
-                    startActivity(i);
-                }
-            });
-
-            imagecake = (ImageButton) findViewById(R.id.imagecake);
+           imagecake = (ImageButton) findViewById(R.id.imagecake);
             imagecake.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, cake.class);
+                    Intent i = new Intent(birthday.this, cake.class);
                     startActivity(i);
                 }
             });
@@ -79,18 +70,8 @@ public class marriage extends AppCompatActivity {
             imagetrans.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, trans.class);
+                    Intent i = new Intent(birthday.this, trans.class);
                     startActivity(i);
-                }
-            });
-
-            imageout = (ImageButton) findViewById(R.id.imageout);
-            imageout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, out.class);
-                    startActivity(i);
-                    //Toast.makeText(Home.this,"View makeups",Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -98,7 +79,7 @@ public class marriage extends AppCompatActivity {
             imagemis.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, mis.class);
+                    Intent i = new Intent(birthday.this, mis.class);
                     startActivity(i);
                 }
             });
@@ -107,7 +88,7 @@ public class marriage extends AppCompatActivity {
             imagemedia.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, med.class);
+                    Intent i = new Intent(birthday.this, med.class);
                     startActivity(i);
                 }
             });
@@ -116,13 +97,14 @@ public class marriage extends AppCompatActivity {
             imageenter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(marriage.this, enter.class);
+                    Intent i = new Intent(birthday.this, enter.class);
                     startActivity(i);
                 }
             });
         }
         catch(Exception e){}
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -139,7 +121,7 @@ public class marriage extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(marriage.this,bookmark.class);
+            Intent intent = new Intent(birthday.this,bookmark.class);
             //intent.putExtra("key",key);
             /// Toast.makeText(client.this, "key", Toast.LENGTH_SHORT).show();
             startActivity(intent);

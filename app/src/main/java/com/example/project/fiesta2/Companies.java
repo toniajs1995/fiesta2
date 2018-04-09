@@ -20,11 +20,12 @@ public class Companies {
     public String district;
     public String category;
     public String bkey;
+    public String event_1;
 
     public Companies() {
     }
 
-    public Companies(String key,String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String licence_no, String phone, String district, String category,String bkey) {
+    public Companies(String key,String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String licence_no, String phone, String district, String category,String bkey,String event_1) {
         this.key=key;
         this.name = name;
         this.address = address;
@@ -38,6 +39,7 @@ public class Companies {
         this.district = district;
         this.category = category;
         this.bkey=bkey;
+        this.event_1=event_1;
     }
 
     public String getAddress() {
@@ -73,6 +75,7 @@ public class Companies {
     public String getCategory() {
         return category;
     }
+
     public String getName() {
         return name;
     }
@@ -84,6 +87,10 @@ public class Companies {
     public String getKey() {return key;}
 
     public String getBkey(){return bkey;}
+
+    public String getEvent_1() {
+        return event_1;
+    }
 }
 
 

@@ -2,23 +2,27 @@ package com.example.project.fiesta2;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class deco extends AppCompatActivity {
+/**
+ * Created by user on 06-04-2018.
+ */
+
+public class mis extends AppCompatActivity {
 
     //recyclerview object
     private RecyclerView recyclerView;
@@ -52,8 +56,8 @@ public class deco extends AppCompatActivity {
         //displaying progress dialog while fetching images
         progressDialog.setMessage("Please wait...");
         progressDialog.show();
-        mDatabase = FirebaseDatabase.getInstance().getReference("decoration");
-       // mDatabase.child("decoration");
+        mDatabase = FirebaseDatabase.getInstance().getReference("miscellaneous");
+        // mDatabase.child("decoration");
         //adding an event listener to fetch values
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,7 +99,7 @@ public class deco extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(deco.this,bookmark.class);
+            Intent intent = new Intent(mis.this,bookmark.class);
             //intent.putExtra("key",key);
             /// Toast.makeText(client.this, "key", Toast.LENGTH_SHORT).show();
             startActivity(intent);
@@ -104,4 +108,3 @@ public class deco extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-

@@ -48,17 +48,68 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         final Companies companies = company.get(position);
         holder.textViewName.setText(companies.getName());
         //holder.textViewPrice.setText(companies.getLocation());
-        Toast.makeText(context, "Key" + companies.getAddress(), Toast.LENGTH_SHORT).show();
 
         Glide.with(context).load(companies.getImage()).into(holder.imageView);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String category=companies.getCategory();
                 String str=companies.getKey();
-                Intent intent = new Intent(context,company_display.class);
-                intent.putExtra("key",str);
-                context.startActivity(intent);
+                if(category.equals("decoration"))
+                {
+
+                    Intent intent = new Intent(context,company_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("catering"))
+                {
+                    Intent intent = new Intent(context,cat_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("hair_makeup"))
+                {
+                    Intent intent = new Intent(context,make_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("media"))
+                {
+                    Intent intent = new Intent(context,med_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("transportation"))
+                {
+                    Intent intent = new Intent(context,trans_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("miscellaneous"))
+                {
+                    Intent intent = new Intent(context,mis_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("entertainment"))
+                {
+                    Intent intent = new Intent(context,enter_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("outfit"))
+                {
+                    Intent intent = new Intent(context,out_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
+                else if(category.equals("cakes_desserts"))
+                {
+                    Intent intent = new Intent(context,cake_display.class);
+                    intent.putExtra("key",str);
+                    context.startActivity(intent);
+                }
             }
         });
         holder.delete.setOnClickListener(new View.OnClickListener() {

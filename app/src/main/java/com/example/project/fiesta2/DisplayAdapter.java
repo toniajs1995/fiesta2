@@ -29,18 +29,18 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
     DatabaseReference mDatabase;
     private Context context;
     private ArrayList<Companies> company;
-
+    String category;
     private static class ViewHolder {
         TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
         ImageView image;
         Button bookmark;
     }
 
-    public DisplayAdapter(ArrayList<Companies> data, Context context) {
+    public DisplayAdapter(ArrayList<Companies> data, Context context,String category) {
         super(context, R.layout.company_display, data);
         this.company = data;
         this.context = context;
-
+        this.category=category;
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -81,7 +81,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
         viewHolder.dcat.setText(company.getCategory());
         viewHolder.demail.setText(company.getEmail_id());
         viewHolder.dphone.setText(company.getPhone());
-        //viewHolder.image.setText(company.getImage());
+        //viewHolder.devent1.setText(company.getEvent_1());
         Glide.with(context).load(company.getImage()).into(viewHolder.image);
         // Return the completed view to render on screen
        viewHolder.bookmark.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +104,8 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
                     bookmark.put("name",company.getName());
                     bookmark.put("image",company.getImage());
                     bookmark.put("bkey",id);
+                    bookmark.put("key",company.getKey());
+                    bookmark.put("category",category);
                     mDatabase.child(id).setValue(bookmark);
                     //mDatabase.child(uid).setValue(cart);
 

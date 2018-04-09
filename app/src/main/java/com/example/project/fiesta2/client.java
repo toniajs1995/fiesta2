@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -64,9 +65,8 @@ public class client extends AppCompatActivity {
         imageBirthday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(CprofileActivity.this, BirthdayActivity.class);
-                //startActivity(i);
-                //Toast.makeText(Home.this,"View caters",Toast.LENGTH_LONG).show();
+                Intent i = new Intent(client.this, birthday.class);
+                startActivity(i);
             }
         });
 
@@ -74,9 +74,8 @@ public class client extends AppCompatActivity {
         imageBaptism.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent i = new Intent(CprofileActivity.this, BaptismActivity.class);
-                //startActivity(i);
-                //Toast.makeText(Home.this,"View makeups",Toast.LENGTH_LONG).show();
+                Intent i = new Intent(client.this, baptism.class);
+                startActivity(i);
             }
         });
 
@@ -99,10 +98,11 @@ public class client extends AppCompatActivity {
         if (id == R.id.action_settings) {
             Intent intent = new Intent(client.this,bookmark.class);
             //intent.putExtra("key",key);
-            // Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
+           /// Toast.makeText(client.this, "key", Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 

@@ -77,8 +77,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
            // textViewPrice = (TextView) itemView.findViewById(R.id.textViewPrice);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
             itemView.setClickable(true);
-
-
             }
 
         }

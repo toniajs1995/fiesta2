@@ -321,6 +321,8 @@ public class profile extends AppCompatActivity {
             slocation = s_location.getText().toString();
 
             EditText s_email = (EditText) findViewById(R.id.s_email);
+            String email= user.getEmail();
+            s_email.setText(email);
             semail = s_email.getText().toString();
 
             EditText s_phone = (EditText) findViewById(R.id.s_phone);

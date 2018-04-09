@@ -70,21 +70,18 @@ public class bookmark extends AppCompatActivity {
 
                 for (DataSnapshot postSnapshot : snap.getChildren()) {
 
-                    String name=postSnapshot.child("name").getValue().toString();
-                    ref = FirebaseDatabase.getInstance().getReference();
-                    ref.child("service_provider");
-                    DataSnapshot shot=snapshot.child("service_provider");
-                    String cmp=shot.child("name").getValue().toString();
-                    if(name.equals(cmp)){
-                        company.add((Companies) company);
-                    }
+                    Companies companies = postSnapshot.getValue(Companies.class);
+                    //Toast.makeText(bookmark.this, "Key"+companies.getName(), Toast.LENGTH_SHORT).show();
+                    company.add(companies);
 
                 }
+
+
                 //creating adapter
-                //adapter = new Adapter(getApplicationContext(),company) ;
+                adapter = new Adapter(getApplicationContext(),company) ;
 
                 //adding adapter to recyclerview
-                //recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(adapter);
 
             }
             @Override

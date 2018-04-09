@@ -16,15 +16,20 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Arrays;
 import java.util.List;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final int RC_SIGN_IN = 123;
-
+    private Spinner spinner;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        spinner=(Spinner) findViewById(R.id.spinner);
+        button=(Button) findViewById(R.id.button);
+        button.setOnClickListener((View.OnClickListener) this);
 
         // Choose authentication providers
         List<AuthUI.IdpConfig> providers = Arrays.asList(
@@ -63,5 +68,18 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void onClick(View view){
+        String option;
+        option=spinner.getSelectedItem().toString();
+        //Toast.makeText(choose.this,option.toString(), Toast.LENGTH_SHORT).show();
+        if(option.equals("Client")){
+            Intent intent = new Intent(LoginActivity.this,client.class);
+            startActivity(intent);
+        }
+        if(option.equals("Service Provider")){
+            Intent intent = new Intent(LoginActivity.this,server.class);
+            startActivity(intent);
+        }
+    }
 }

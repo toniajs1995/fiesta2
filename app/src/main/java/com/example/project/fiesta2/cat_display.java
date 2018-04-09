@@ -4,25 +4,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class company_display extends AppCompatActivity {
+/**
+ * Created by user on 30-03-2018.
+ */
 
+public class cat_display extends AppCompatActivity {
     private ArrayList<Companies> companies;
     DatabaseReference mDatabase;
     TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
@@ -36,7 +36,7 @@ public class company_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_display);
         //final String key = getIntent().getStringExtra("key");
-       // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         //uid = user.getUid();
         listView=(ListView)findViewById(R.id.list);
         key = getIntent().getStringExtra("key");
@@ -50,18 +50,18 @@ public class company_display extends AppCompatActivity {
         dcat = (TextView) findViewById(R.id.dcat);
         demail = (TextView) findViewById(R.id.demail);
         dphone = (TextView) findViewById(R.id.dphone);
-        devent1 = (TextView) findViewById(R.id.devent1);
+        // devent1 = (TextView) findViewById(R.id.devent1);
         // devent2 = (TextView) findViewById(R.id.devent2);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 companies=new ArrayList<>();
-                DataSnapshot snap=snapshot.child("decoration");
+                DataSnapshot snap=snapshot.child("catering");
                // Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
-                adapter= new DisplayAdapter(companies,getApplicationContext(),"decoration");
+                adapter= new DisplayAdapter(companies,getApplicationContext(),"catering");
                 listView.setAdapter(adapter);
             }
 
@@ -90,27 +90,29 @@ public class company_display extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(company_display.this,review.class);
+            Intent intent = new Intent(cat_display.this,review.class);
             intent.putExtra("key",key);
-           // Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
+            // Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
         if (id == R.id.action_settings1) {
-            Intent intent = new Intent(company_display.this,rating.class);
+            Intent intent = new Intent(cat_display.this,rating.class);
             intent.putExtra("key",key);
-          //  Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
+            //  Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
+
         if (id == R.id.action_settings2) {
-            Intent intent = new Intent(company_display.this,bookmark.class);
-           // intent.putExtra("key",key);
+            Intent intent = new Intent(cat_display.this,bookmark.class);
+            // intent.putExtra("key",key);
             //  Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }
