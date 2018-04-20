@@ -105,206 +105,6 @@ public class profile extends AppCompatActivity {
             EditText s_add = (EditText) findViewById(R.id.s_add);
             String sadd = s_add.getText().toString();
 
-            CheckBox deco = (CheckBox) findViewById(R.id.deco);
-            if(deco.isChecked())
-            {scategory= scategory+","+deco.getText().toString();
-                ref = database.getReference("decoration");
-                Map decoration = new HashMap();
-                decoration.put("name",sname);
-                decoration.put("key",uid);
-                decoration.put("licence_no", slic);
-                decoration.put("address", sadd);
-                decoration.put("district", sdistrict);
-                decoration.put("category", scategory);
-                decoration.put("min_budget", sminbudget);
-                decoration.put("max_budget", smaxbudget);
-                decoration.put("location", slocation);
-                decoration.put("email_id", semail);
-                decoration.put("phone", sphone);
-                // uid = ref.push().getKey();
-                ref.child(uid).setValue(decoration);
-            }
-
-            CheckBox make = (CheckBox) findViewById(R.id.make);
-            if(make.isChecked())
-            {scategory= scategory+","+make.getText().toString();
-                ref = database.getReference("hair_makeup");
-                Map hair_makeup = new HashMap();
-                hair_makeup.put("name",sname);
-                hair_makeup.put("key",uid);
-                hair_makeup.put("licence_no", slic);
-                hair_makeup.put("address", sadd);
-                hair_makeup.put("district", sdistrict);
-                hair_makeup.put("category", scategory);
-                hair_makeup.put("min_budget", sminbudget);
-                hair_makeup.put("max_budget", smaxbudget);
-                hair_makeup.put("location", slocation);
-                hair_makeup.put("email_id", semail);
-                hair_makeup.put("phone", sphone);
-                // uid = ref.push().getKey();
-                ref.child(uid).setValue(hair_makeup);
-            }
-
-            CheckBox out = (CheckBox) findViewById(R.id.out);
-            if(out.isChecked())
-            {scategory= scategory+","+out.getText().toString();
-                ref = database.getReference("outfit");
-                Map outfit = new HashMap();
-                outfit.put("name",sname);
-                outfit.put("key",uid);
-                outfit.put("licence_no", slic);
-                outfit.put("address", sadd);
-                outfit.put("district", sdistrict);
-                outfit.put("category", scategory);
-                outfit.put("min_budget", sminbudget);
-                outfit.put("max_budget", smaxbudget);
-                outfit.put("location", slocation);
-                outfit.put("email_id", semail);
-                outfit.put("phone", sphone);
-                //uid = ref.push().getKey();
-                ref.child(uid).setValue(outfit);
-            }
-
-            CheckBox enter = (CheckBox) findViewById(R.id.enter);
-            if(enter.isChecked())
-            {scategory= scategory+","+enter.getText().toString();
-                ref = database.getReference("entertainment");
-                Map entertainment = new HashMap();
-                entertainment.put("name",sname);
-                entertainment.put("key",uid);
-                entertainment.put("licence_no", slic);
-                entertainment.put("address", sadd);
-                entertainment.put("district", sdistrict);
-                entertainment.put("category", scategory);
-                entertainment.put("min_budget", sminbudget);
-                entertainment.put("max_budget", smaxbudget);
-                entertainment.put("location", slocation);
-                entertainment.put("email_id", semail);
-                entertainment.put("phone", sphone);
-                //uid = ref.push().getKey();
-                ref.child(uid).setValue(entertainment);
-            }
-
-            CheckBox cat = (CheckBox) findViewById(R.id.cat);
-            if(cat.isChecked())
-            {scategory= scategory+","+cat.getText().toString();
-                ref = database.getReference("catering");
-                Map catering = new HashMap();
-                catering.put("name",sname);
-                catering.put("key",uid);
-                catering.put("licence_no", slic);
-                catering.put("address", sadd);
-                catering.put("district", sdistrict);
-                catering.put("category", scategory);
-                catering.put("min_budget", sminbudget);
-                catering.put("max_budget", smaxbudget);
-                catering.put("location", slocation);
-                catering.put("email_id", semail);
-                catering.put("phone", sphone);
-                //uid = ref.push().getKey();
-                ref.child(uid).setValue(catering);
-            }
-
-            CheckBox trans = (CheckBox) findViewById(R.id.trans);
-            if(trans.isChecked())
-            {scategory= scategory+","+trans.getText().toString();
-                ref = database.getReference("transportation");
-                Map transportation = new HashMap();
-                transportation.put("name",sname);
-                transportation.put("key",uid);
-                transportation.put("licence_no", slic);
-                transportation.put("address", sadd);
-                transportation.put("district", sdistrict);
-                transportation.put("category", scategory);
-                transportation.put("min_budget", sminbudget);
-                transportation.put("max_budget", smaxbudget);
-                transportation.put("location", slocation);
-                transportation.put("email_id", semail);
-                transportation.put("phone", sphone);
-                //uid = ref.push().getKey();
-                ref.child(uid).setValue(transportation);
-            }
-
-            CheckBox invi = (CheckBox) findViewById(R.id.invi);
-            if(invi.isChecked())
-            {scategory= scategory+","+invi.getText().toString();
-                ref = database.getReference("invitation");
-                Map invitation = new HashMap();
-                invitation.put("name",sname);
-                invitation.put("key",uid);
-                invitation.put("licence_no", slic);
-                invitation.put("address", sadd);
-                invitation.put("district", sdistrict);
-                invitation.put("category", scategory);
-                invitation.put("min_budget", sminbudget);
-                invitation.put("max_budget", smaxbudget);
-                invitation.put("location", slocation);
-                invitation.put("email_id", semail);
-                invitation.put("phone", sphone);
-                // uid = ref.push().getKey();
-                ref.child(uid).setValue(invitation);
-            }
-
-            CheckBox med = (CheckBox) findViewById(R.id.med);
-            if(med.isChecked())
-            {scategory= scategory+","+med.getText().toString();
-                ref = database.getReference("media");
-                Map media = new HashMap();
-                media.put("name",sname);
-                media.put("key",uid);
-                media.put("licence_no", slic);
-                media.put("address", sadd);
-                media.put("district", sdistrict);
-                media.put("category", scategory);
-                media.put("min_budget", sminbudget);
-                media.put("max_budget", smaxbudget);
-                media.put("location", slocation);
-                media.put("email_id", semail);
-                media.put("phone", sphone);
-                // uid = ref.push().getKey();
-                ref.child(uid).setValue(media);
-            }
-
-            CheckBox cake = (CheckBox) findViewById(R.id.cake);
-            if(cake.isChecked())
-            {scategory= scategory+","+cake.getText().toString();
-                ref = database.getReference("cakes_desserts");
-                Map cakes_desserts = new HashMap();
-                cakes_desserts.put("name",sname);
-                cakes_desserts.put("key",uid);
-                cakes_desserts.put("licence_no", slic);
-                cakes_desserts.put("address", sadd);
-                cakes_desserts.put("district", sdistrict);
-                cakes_desserts.put("category", scategory);
-                cakes_desserts.put("min_budget", sminbudget);
-                cakes_desserts.put("max_budget", smaxbudget);
-                cakes_desserts.put("location", slocation);
-                cakes_desserts.put("email_id", semail);
-                cakes_desserts.put("phone", sphone);
-                // uid = ref.push().getKey();
-                ref.child(uid).setValue(cakes_desserts);
-            }
-
-            CheckBox mis = (CheckBox) findViewById(R.id.mis);
-            if(mis.isChecked())
-            {scategory= scategory+","+mis.getText().toString();
-                ref = database.getReference("miscellaneous");
-                Map miscellaneous = new HashMap();
-                miscellaneous.put("name",sname);
-                miscellaneous.put("key",uid);
-                miscellaneous.put("licence_no", slic);
-                miscellaneous.put("address", sadd);
-                miscellaneous.put("district", sdistrict);
-                miscellaneous.put("category", scategory);
-                miscellaneous.put("min_budget", sminbudget);
-                miscellaneous.put("max_budget", smaxbudget);
-                miscellaneous.put("location", slocation);
-                miscellaneous.put("email_id", semail);
-                miscellaneous.put("phone", sphone);
-                // uid = ref.push().getKey();
-                ref.child(uid).setValue(miscellaneous);
-            }
-
             EditText s_minbudget = (EditText) findViewById(R.id.s_minbudget);
             sminbudget = s_minbudget.getText().toString();
 
@@ -322,6 +122,7 @@ public class profile extends AppCompatActivity {
 
             EditText s_email = (EditText) findViewById(R.id.s_email);
             String email= user.getEmail();
+           // Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
             s_email.setText(email);
             semail = s_email.getText().toString();
 
@@ -348,10 +149,7 @@ public class profile extends AppCompatActivity {
                 return;
             }
 
-            if(TextUtils.isEmpty(scategory)) {
-                Toast.makeText(this, "plz select any of the services ", Toast.LENGTH_SHORT).show();
-                return;
-            }
+
 
             if(TextUtils.isEmpty(sminbudget)) {
                 Toast.makeText(this, "plz enter minimum budget ", Toast.LENGTH_SHORT).show();
@@ -374,12 +172,265 @@ public class profile extends AppCompatActivity {
             }
 
 
+            CheckBox deco = (CheckBox) findViewById(R.id.deco);
+            if(deco.isChecked())
+            {scategory= scategory+","+deco.getText().toString();
+            }
+
+            CheckBox make = (CheckBox) findViewById(R.id.make);
+            if(make.isChecked())
+            {scategory= scategory+","+make.getText().toString();
+
+            }
+
+            CheckBox out = (CheckBox) findViewById(R.id.out);
+            if(out.isChecked())
+            {scategory= scategory+","+out.getText().toString();
+
+            }
+
+            CheckBox enter = (CheckBox) findViewById(R.id.enter);
+            if(enter.isChecked())
+            {scategory= scategory+","+enter.getText().toString();
+
+            }
+
+            CheckBox cat = (CheckBox) findViewById(R.id.cat);
+            if(cat.isChecked())
+            {scategory= scategory+","+cat.getText().toString();
+
+            }
+
+            CheckBox trans = (CheckBox) findViewById(R.id.trans);
+            if(trans.isChecked())
+            {scategory= scategory+","+trans.getText().toString();
+
+            }
+
+            CheckBox invi = (CheckBox) findViewById(R.id.invi);
+            if(invi.isChecked())
+            {scategory= scategory+","+invi.getText().toString();
+
+            }
+
+            CheckBox med = (CheckBox) findViewById(R.id.med);
+            if(med.isChecked())
+            {scategory= scategory+","+med.getText().toString();
+
+            }
+
+            CheckBox cake = (CheckBox) findViewById(R.id.cake);
+            if(cake.isChecked())
+            {scategory= scategory+","+cake.getText().toString();
+
+            }
+
+            CheckBox mis = (CheckBox) findViewById(R.id.mis);
+            if(mis.isChecked())
+            {scategory= scategory+","+mis.getText().toString();
+
+            }
+
+            if(TextUtils.isEmpty(scategory)) {
+                Toast.makeText(this, "plz select any of the services ", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if(deco.isChecked())
+            {
+                ref = database.getReference("decoration");
+                Map decoration = new HashMap();
+                decoration.put("name",sname);
+                decoration.put("key",uid);
+                decoration.put("license_no", slic);
+                decoration.put("address", sadd);
+                decoration.put("district", sdistrict);
+                decoration.put("category", scategory);
+                decoration.put("min_budget", sminbudget);
+                decoration.put("max_budget", smaxbudget);
+                decoration.put("location", slocation);
+                decoration.put("email_id", semail);
+                decoration.put("phone", sphone);
+                // uid = ref.push().getKey();
+               // decoration.put("category", scategory);
+                ref.child(uid).setValue(decoration);
+            }
+
+            if(make.isChecked())
+            {
+                ref = database.getReference("hair_makeup");
+                Map hair_makeup = new HashMap();
+                hair_makeup.put("name",sname);
+                hair_makeup.put("key",uid);
+                hair_makeup.put("license_no", slic);
+                hair_makeup.put("address", sadd);
+                hair_makeup.put("district", sdistrict);
+                hair_makeup.put("category", scategory);
+                hair_makeup.put("min_budget", sminbudget);
+                hair_makeup.put("max_budget", smaxbudget);
+                hair_makeup.put("location", slocation);
+                hair_makeup.put("email_id", semail);
+                hair_makeup.put("phone", sphone);
+                // uid = ref.push().getKey();
+                ref.child(uid).setValue(hair_makeup);
+            }
+
+            if(out.isChecked())
+            { ref = database.getReference("outfit");
+                Map outfit = new HashMap();
+                outfit.put("name",sname);
+                outfit.put("key",uid);
+                outfit.put("license_no", slic);
+                outfit.put("address", sadd);
+                outfit.put("district", sdistrict);
+                outfit.put("category", scategory);
+                outfit.put("min_budget", sminbudget);
+                outfit.put("max_budget", smaxbudget);
+                outfit.put("location", slocation);
+                outfit.put("email_id", semail);
+                outfit.put("phone", sphone);
+                //uid = ref.push().getKey();
+                ref.child(uid).setValue(outfit);
+            }
+
+            if(enter.isChecked())
+            {
+                ref = database.getReference("entertainment");
+                Map entertainment = new HashMap();
+                entertainment.put("name",sname);
+                entertainment.put("key",uid);
+                entertainment.put("license_no", slic);
+                entertainment.put("address", sadd);
+                entertainment.put("district", sdistrict);
+                entertainment.put("category", scategory);
+                entertainment.put("min_budget", sminbudget);
+                entertainment.put("max_budget", smaxbudget);
+                entertainment.put("location", slocation);
+                entertainment.put("email_id", semail);
+                entertainment.put("phone", sphone);
+                //uid = ref.push().getKey();
+                ref.child(uid).setValue(entertainment);
+            }
+
+            if(cat.isChecked())
+            {
+                ref = database.getReference("catering");
+                Map catering = new HashMap();
+                catering.put("name",sname);
+                catering.put("key",uid);
+                catering.put("license_no", slic);
+                catering.put("address", sadd);
+                catering.put("district", sdistrict);
+                catering.put("category", scategory);
+                catering.put("min_budget", sminbudget);
+                catering.put("max_budget", smaxbudget);
+                catering.put("location", slocation);
+                catering.put("email_id", semail);
+                catering.put("phone", sphone);
+                //uid = ref.push().getKey();
+                ref.child(uid).setValue(catering);
+            }
+
+            if(trans.isChecked())
+            {
+                ref = database.getReference("transportation");
+                Map transportation = new HashMap();
+                transportation.put("name",sname);
+                transportation.put("key",uid);
+                transportation.put("license_no", slic);
+                transportation.put("address", sadd);
+                transportation.put("district", sdistrict);
+                transportation.put("category", scategory);
+                transportation.put("min_budget", sminbudget);
+                transportation.put("max_budget", smaxbudget);
+                transportation.put("location", slocation);
+                transportation.put("email_id", semail);
+                transportation.put("phone", sphone);
+                //uid = ref.push().getKey();
+                ref.child(uid).setValue(transportation);
+            }
+
+            if(invi.isChecked())
+            {
+                ref = database.getReference("invitation");
+                Map invitation = new HashMap();
+                invitation.put("name",sname);
+                invitation.put("key",uid);
+                invitation.put("license_no", slic);
+                invitation.put("address", sadd);
+                invitation.put("district", sdistrict);
+                invitation.put("category", scategory);
+                invitation.put("min_budget", sminbudget);
+                invitation.put("max_budget", smaxbudget);
+                invitation.put("location", slocation);
+                invitation.put("email_id", semail);
+                invitation.put("phone", sphone);
+                // uid = ref.push().getKey();
+                ref.child(uid).setValue(invitation);
+            }
+
+            if(med.isChecked())
+            {ref = database.getReference("media");
+                Map media = new HashMap();
+                media.put("name",sname);
+                media.put("key",uid);
+                media.put("license_no", slic);
+                media.put("address", sadd);
+                media.put("district", sdistrict);
+                media.put("category", scategory);
+                media.put("min_budget", sminbudget);
+                media.put("max_budget", smaxbudget);
+                media.put("location", slocation);
+                media.put("email_id", semail);
+                media.put("phone", sphone);
+                // uid = ref.push().getKey();
+                ref.child(uid).setValue(media);
+            }
+
+            if(cake.isChecked())
+            {
+                ref = database.getReference("cakes_desserts");
+                Map cakes_desserts = new HashMap();
+                cakes_desserts.put("name",sname);
+                cakes_desserts.put("key",uid);
+                cakes_desserts.put("license_no", slic);
+                cakes_desserts.put("address", sadd);
+                cakes_desserts.put("district", sdistrict);
+                cakes_desserts.put("category", scategory);
+                cakes_desserts.put("min_budget", sminbudget);
+                cakes_desserts.put("max_budget", smaxbudget);
+                cakes_desserts.put("location", slocation);
+                cakes_desserts.put("email_id", semail);
+                cakes_desserts.put("phone", sphone);
+                // uid = ref.push().getKey();
+                ref.child(uid).setValue(cakes_desserts);
+            }
+
+            if(mis.isChecked())
+            {
+                ref = database.getReference("miscellaneous");
+                Map miscellaneous = new HashMap();
+                miscellaneous.put("name",sname);
+                miscellaneous.put("key",uid);
+                miscellaneous.put("license_no", slic);
+                miscellaneous.put("address", sadd);
+                miscellaneous.put("district", sdistrict);
+                miscellaneous.put("category", scategory);
+                miscellaneous.put("min_budget", sminbudget);
+                miscellaneous.put("max_budget", smaxbudget);
+                miscellaneous.put("location", slocation);
+                miscellaneous.put("email_id", semail);
+                miscellaneous.put("phone", sphone);
+                // uid = ref.push().getKey();
+                ref.child(uid).setValue(miscellaneous);
+            }
+
             ref = database.getReference("service_provider");
 
             final Map service_provider = new HashMap();
             service_provider.put("key",uid);
             service_provider.put("name", sname);
-            service_provider.put("licence_no", slic);
+            service_provider.put("license_no", slic);
             service_provider.put("address", sadd);
             service_provider.put("district", sdistrict);
             service_provider.put("category", scategory);

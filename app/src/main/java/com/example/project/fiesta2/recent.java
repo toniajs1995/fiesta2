@@ -33,8 +33,8 @@ public class recent extends AppCompatActivity {
 
         e_name1 = (EditText) findViewById(R.id.e_name1);
         e_contact1 = (EditText) findViewById(R.id.e_contact1);
-        e_name2 = (EditText) findViewById(R.id.e_name2);
-        e_contact2 = (EditText) findViewById(R.id.e_contact2);
+       // e_name2 = (EditText) findViewById(R.id.e_name2);
+       // e_contact2 = (EditText) findViewById(R.id.e_contact2);
         insert = (Button) findViewById(R.id.insert);
 
         try {
@@ -77,7 +77,7 @@ public class recent extends AppCompatActivity {
         event1=event1+","+e_contact1.getText().toString();
 
 
-        String ename2 = e_name2.getText().toString();
+       /* String ename2 = e_name2.getText().toString();
         event1=event2+","+e_name2.getText().toString();
 
 
@@ -87,19 +87,19 @@ public class recent extends AppCompatActivity {
             return;
         }
         event2=event2+","+e_contact2.getText().toString();
-        //Toast.makeText(recent.this, event1, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(recent.this, event1, Toast.LENGTH_SHORT).show();*/
         ref = database.getReference("service_provider/"+uid);
         String key= ref.push().getKey();
         final Map service_provider = new HashMap();
 
         if(TextUtils.isEmpty(event1)){
             Toast.makeText(recent.this, " Not Inserted", Toast.LENGTH_SHORT).show();}
-        if(TextUtils.isEmpty(event2)){
-            Toast.makeText(recent.this, "Not Inserted", Toast.LENGTH_SHORT).show();}
+      /*  if(TextUtils.isEmpty(event2)){
+            Toast.makeText(recent.this, "Not Inserted", Toast.LENGTH_SHORT).show();}*/
 
         service_provider.put("event_1", event1);
 
-        service_provider.put("event_2", event2);
+      //  service_provider.put("event_2", event2);
         ref.child(key).setValue(service_provider);
         Toast.makeText(recent.this,"Inserted", Toast.LENGTH_SHORT).show();
 

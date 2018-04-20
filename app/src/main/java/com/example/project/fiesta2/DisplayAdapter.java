@@ -31,7 +31,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
     private ArrayList<Companies> company;
     String category;
     private static class ViewHolder {
-        TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
+        TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,ddates;
         ImageView image;
         Button bookmark;
     }
@@ -64,7 +64,10 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
             viewHolder.demail = (TextView) convertView.findViewById(R.id.demail);
             viewHolder.dphone = (TextView) convertView.findViewById(R.id.dphone);
             viewHolder.image = (ImageView) convertView.findViewById(R.id.image);
+            viewHolder.devent1=(TextView) convertView.findViewById(R.id.devent1);
+            viewHolder.ddates=(TextView) convertView.findViewById(R.id.ddates);
             viewHolder.bookmark = (Button) convertView.findViewById(R.id.bookmark);
+
 
             convertView.setTag(viewHolder);
         } else {
@@ -81,7 +84,8 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
         viewHolder.dcat.setText(company.getCategory());
         viewHolder.demail.setText(company.getEmail_id());
         viewHolder.dphone.setText(company.getPhone());
-        //viewHolder.devent1.setText(company.getEvent_1());
+        viewHolder.devent1.setText(company.getEvent_1());
+        viewHolder.ddates.setText(company.getDates());
         Glide.with(context).load(company.getImage()).into(viewHolder.image);
         // Return the completed view to render on screen
        viewHolder.bookmark.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +99,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
 
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String uid = user.getUid();
+                    String email=user.getEmail();
                     Toast.makeText(context, "Company added to bookmarks", Toast.LENGTH_SHORT).show();
                     mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/"+uid);
                     String id=mDatabase.push().getKey();
@@ -106,6 +111,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
                     bookmark.put("bkey",id);
                     bookmark.put("key",company.getKey());
                     bookmark.put("category",category);
+                    bookmark.put("email_id",email);
                     mDatabase.child(id).setValue(bookmark);
                     //mDatabase.child(uid).setValue(cart);
 

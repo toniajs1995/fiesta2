@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.project.fiesta2.LoginActivity">
+    tools:context="com.example.project.fiesta2.LoginActivity"
+    android:background="@drawable/back2">
 
     <RelativeLayout
-        android:layout_height="200dp"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical">
+        android:layout_height="200dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView5"
@@ -18,28 +19,38 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="14dp"
-            android:layout_toStartOf="@+id/button"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="11dp"
+            android:layout_toStartOf="@+id/spinner"
             android:text="You are a"
-            android:textSize="20sp" />
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Spinner
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:layout_width="200dp"
-            android:entries="@array/who"
             android:id="@+id/spinner"
-            android:layout_marginLeft="150dp"/>
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView5"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="63dp"
+            android:entries="@array/who"
+            android:textColor="@color/colorAccent"/>
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView5"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_gravity="center"
-            android:layout_marginTop="37dp"
-            android:text="OK" />
+            android:background="@drawable/shape"
+            android:text="OK"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
 
     </RelativeLayout>
 

@@ -75,7 +75,10 @@ public class bookmark extends AppCompatActivity {
                     company.add(companies);
 
                 }
-
+                if(company.isEmpty())
+                {
+                    Toast.makeText(bookmark.this, "Sorry,No Bookmarks Yet", Toast.LENGTH_SHORT).show();
+                }
 
                 //creating adapter
                 adapter = new Adapter(getApplicationContext(),company) ;

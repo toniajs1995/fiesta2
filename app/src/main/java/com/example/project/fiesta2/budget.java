@@ -101,6 +101,10 @@ public class budget extends AppCompatActivity {
                         artistList.add(artist);
                     }
                 }
+                if(artistList.isEmpty())
+                {
+                        Toast.makeText(budget.this, "Sorry,No Results Found", Toast.LENGTH_SHORT).show();
+                }
                 ArtistList adapter=new ArtistList(budget.this,artistList);
                 listViewArtists.setAdapter(adapter);
 

@@ -8,44 +8,55 @@
 
     <Button
         android:id="@+id/search_budget"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:text="Search by Budget"
-        android:layout_marginLeft="10dp"/>
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shapel"
+        android:textSize="12dp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/search_location"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/search_budget"
+        android:layout_alignBottom="@+id/search_budget"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/shape"
         android:text="Search by Location"
-        android:layout_marginLeft="200dp"/>
+        android:textColor="#FFFFFF"
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/events"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/search_budget"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:text="Services"
+        android:textColor="#000"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="50dp"
+        android:typeface="monospace"
         tools:ignore="MissingConstraints" />
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="100dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="120dp">
 
         <ImageButton
             android:id="@+id/imagedeco"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -65,25 +76,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:text="Decoration"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
                 android:textStyle="bold" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="240dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="340dp">
 
         <ImageButton
             android:id="@+id/imagecat"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -111,19 +124,19 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="380dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="560dp">
 
         <ImageButton
             android:id="@+id/imagemake"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -150,19 +163,19 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="520dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="780dp">
 
         <ImageButton
             android:id="@+id/imageout"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -189,19 +202,19 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="660dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="1000dp">
 
         <ImageButton
             android:id="@+id/imageenter"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -228,19 +241,19 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="800dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="1220dp">
 
         <ImageButton
             android:id="@+id/imagemedia"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -267,19 +280,19 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="940dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="1440dp">
 
         <ImageButton
             android:id="@+id/imagecake"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -306,19 +319,19 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="1080dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="1660dp">
 
         <ImageButton
             android:id="@+id/imagetrans"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"
@@ -345,19 +358,19 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="1220dp">
+        android:layout_height="200dp"
+        android:layout_marginTop="1880dp">
 
         <ImageButton
             android:id="@+id/imagemis"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
             android:background="#fffafa"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.134"

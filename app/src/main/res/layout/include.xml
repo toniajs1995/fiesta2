@@ -20,6 +20,7 @@
             android:textAlignment="center"
             android:textColorHighlight="#000"
             android:textSize="25sp"
+            android:textColor="#000"
             android:text="PROFILE"/>
 
         <ImageView
@@ -63,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="490dp"
-            android:text="Location"
+            android:text="Location:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -80,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="550dp"
-            android:text="District"
+            android:text="District:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -95,15 +96,15 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="610dp"
-            android:text="Categories"
+            android:text="Categories:"
             android:textSize="18sp"
             android:textColor="#000" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:id="@+id/dcat"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="640dp"
@@ -114,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="670dp"
-            android:text="Minimum Budget"
+            android:text="Minimum Budget:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -130,8 +131,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-           android:layout_marginTop="730dp"
-            android:text="Maximum Budget"
+            android:layout_marginTop="730dp"
+            android:text="Maximum Budget:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -148,7 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="790dp"
-            android:text="Email id"
+            android:text="Email Id:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -165,7 +166,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="850dp"
-            android:text="Contact Number"
+            android:text="Contact Number:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -182,7 +183,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="910dp"
-            android:text="Recent Events"
+            android:text="Recent Event:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -197,18 +198,9 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/devent2"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="970dp"
-            android:textSize="15sp"
-            android:textColor="#000"/>
-
-        <TextView
-            android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="1000dp"
-            android:text="Booked Dates"
+            android:layout_marginTop="970dp"
+            android:text="Booked Dates:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -217,20 +209,20 @@
             android:layout_height="wrap_content"
             android:id="@+id/ddate"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="1030dp"
+            android:layout_marginTop="1000dp"
             android:textSize="15sp"
             android:textColor="#000"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="update profile"
             android:gravity="center"
-            android:layout_marginTop="1060dp"
-            android:id="@+id/update"/>
+            android:background="@drawable/shapel"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="1030dp"
+            android:id="@+id/update"
+            android:layout_marginEnd="15dp"/>
 
     </RelativeLayout>
-
-
-
 </LinearLayout>

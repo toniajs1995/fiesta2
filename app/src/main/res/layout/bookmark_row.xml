@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:layout_height="wrap_content"
+    android:layout_height="115dp"
     android:layout_width="match_parent"
+    android:background="@drawable/back2"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <android.support.v7.widget.CardView
@@ -17,13 +18,26 @@
             android:minHeight="100dp">
 
             <TextView
-                android:layout_height="50dp"
-                android:layout_width="230dp"
-                android:layout_margin="4dp"
-                android:text="Name:"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignBaseline="@+id/textViewName"
+                android:layout_alignBottom="@+id/textViewName"
+                android:layout_toEndOf="@+id/imageView"
                 android:paddingLeft="6dp"
-                android:layout_alignParentEnd="true"
-                android:id="@+id/textViewName"/>
+                android:text="Name:"
+                android:textSize="15dp"
+                android:id="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="210dp"
+                android:layout_height="40dp"
+                android:layout_above="@+id/delete"
+                android:layout_marginStart="21dp"
+                android:layout_toEndOf="@+id/textView8"
+                android:paddingLeft="6dp"
+                android:text="Name:"
+                android:textSize="15dp" />
 
             <ImageView
                 android:layout_height="100dp"
@@ -35,12 +49,13 @@
                 android:layout_alignParentTop="true"/>
 
             <ImageButton
-                android:layout_height="50dp"
-                android:layout_width="50dp"
                 android:id="@+id/delete"
-                android:layout_marginTop="25dp"
-                android:clickable="true"
-                android:layout_alignParentRight="true"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/imageView"
+                android:layout_alignEnd="@+id/textViewName"
+                android:background="@drawable/ic_delete_icon"
+                android:clickable="true" />
 
         </RelativeLayout>
 

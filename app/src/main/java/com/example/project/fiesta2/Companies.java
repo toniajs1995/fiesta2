@@ -15,17 +15,18 @@ public class Companies {
     public String min_budget;
     public String max_budget;
     public String image;
-    public String licence_no;
+    public String license_no;
     public String phone;
     public String district;
     public String category;
     public String bkey;
     public String event_1;
+    public String dates;
 
     public Companies() {
     }
 
-    public Companies(String key,String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String licence_no, String phone, String district, String category,String bkey,String event_1) {
+    public Companies(String key,String name, String address, String location, String email_id, String min_budget, String max_budget, String image, String license_no, String phone, String district, String category,String bkey,String event_1,String dates) {
         this.key=key;
         this.name = name;
         this.address = address;
@@ -34,12 +35,13 @@ public class Companies {
         this.min_budget = min_budget;
         this.max_budget = max_budget;
         this.image = image;
-        this.licence_no = licence_no;
+        this.license_no = license_no;
         this.phone = phone;
         this.district = district;
         this.category = category;
         this.bkey=bkey;
         this.event_1=event_1;
+        this.dates=dates;
     }
 
     public String getAddress() {
@@ -60,8 +62,8 @@ public class Companies {
 
     public String getMax_budget() {return max_budget;}
 
-    public String getLicence_no() {
-        return licence_no;
+    public String getLicense_no() {
+        return license_no;
     }
 
     public String getPhone() {
@@ -90,6 +92,10 @@ public class Companies {
 
     public String getEvent_1() {
         return event_1;
+    }
+
+    public String getDates() {
+        return dates;
     }
 }
 

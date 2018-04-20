@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,7 +49,8 @@ public class cake extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String uid = user.getUid();
 
         progressDialog = new ProgressDialog(this);
 
@@ -66,8 +69,10 @@ public class cake extends AppCompatActivity {
                 progressDialog.dismiss();
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     Companies companies = postSnapshot.getValue( Companies.class);
-                    company.add(companies);
-
+                    String id= companies.getKey();
+                    if(!id.equals(uid)) {
+                        company.add(companies);
+                    }
                 }
                 //creating adapter
                 adapter = new MyAdapter(getApplicationContext(), company);

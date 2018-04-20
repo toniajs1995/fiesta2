@@ -25,7 +25,7 @@ public class company_display extends AppCompatActivity {
 
     private ArrayList<Companies> companies;
     DatabaseReference mDatabase;
-    TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
+    TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,ddates;
     String uid,str,key;
     ImageView image;
     DisplayAdapter adapter;
@@ -51,7 +51,7 @@ public class company_display extends AppCompatActivity {
         demail = (TextView) findViewById(R.id.demail);
         dphone = (TextView) findViewById(R.id.dphone);
         devent1 = (TextView) findViewById(R.id.devent1);
-        // devent2 = (TextView) findViewById(R.id.devent2);
+        ddates = (TextView) findViewById(R.id.ddates);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override

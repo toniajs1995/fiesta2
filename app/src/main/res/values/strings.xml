@@ -24,9 +24,14 @@
         <item>Wayanad</item>
     </array>
     <string name="title_activity_server">Service Provider</string>
-
+    <string name="title_activity_marriage">Marriage</string>
+    <string name="title_activity_baptism">Baptism</string>
+    <string name="title_activity_birthday">Birthday</string>
+    <string name="title_activity_bookmark">Bookmarks</string>
+    <string name="title_activity_deco">Decoration</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Update Profile</string>
+    <string name="title_activity_font">font</string>
 </resources>

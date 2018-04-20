@@ -2,7 +2,8 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/light"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -12,12 +13,14 @@
         android:text="TextView"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="150dp"
+        android:textColor="#000"
         android:id="@+id/textViewName"/>
 
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="TextView"
+        android:textColor="#000"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="150dp"
         android:id="@+id/textViewGenre"
@@ -30,6 +33,7 @@
         android:layout_marginTop="70dp"
         android:layout_marginLeft="150dp"
         android:id="@+id/textViewBud"
+        android:textColor="#000"
         app:layout_constraintTop_toBottomOf="@+id/textViewGenre"/>
 
     <TextView
@@ -40,12 +44,14 @@
         android:layout_alignBottom="@+id/textViewName"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
-        android:text="Company:" />
+        android:text="Company:"
+        android:textColor="#000"/>
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:textColor="#000"
         android:layout_marginTop="50dp"
         android:text="District:" />
     <TextView
@@ -53,8 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:textColor="#000"
         android:layout_marginTop="70dp"
-        android:text="Location:" />
+        android:text="Location:"
+        />
 
 
 </RelativeLayout>

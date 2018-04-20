@@ -5,13 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back2"
     tools:context="com.example.project.fiesta2.dates">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Booked Dates"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:textColor="#000"
         android:gravity="center"/>
 
     <EditText
@@ -20,15 +22,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:clickable="true"
-        android:hint="Click to enter date" />
+        android:hint="Click to enter dates"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button3"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="100dp"
+        android:textColor="#FFFFFF"
         android:text="submit"
+        android:background="@drawable/shape"
+        android:textSize="12dp"
         tools:ignore="UnknownId" />
 
 

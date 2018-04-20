@@ -1,9 +1,12 @@
 package com.example.project.fiesta2;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,15 +19,39 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class server extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button view_prof;
+    private RecyclerView recyclerView;
+
+    //adapter object
+    private RecyclerView.Adapter badapter;
+
+    //database reference
+    private DatabaseReference mDatabase,ref;
+
+    //progress dialog
+    private ProgressDialog progressDialog;
+
+    //list to hold all the uploaded images
+    private List<Companies> company;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +94,56 @@ public class server extends AppCompatActivity
           //  ImageView imgProfilePic = (ImageView) header.findViewById(R.id.imageView);
            // Glide.with(getApplicationContext()).load(personPhotoUrl).into(imgProfilePic);
         }
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final String uid = user.getUid();
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        progressDialog = new ProgressDialog(this);
+
+        company = new ArrayList<>();
+
+        //displaying progress dialog while fetching images
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("bookmark");
+
+        //adding an event listener to fetch values
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                //dismissing the progress dialog
+                progressDialog.dismiss();
+                DataSnapshot snap=snapshot.child("bookmark/"+uid);
+
+                for (DataSnapshot postSnapshot : snap.getChildren()) {
+
+                    Companies companies = postSnapshot.getValue(Companies.class);
+                    //Toast.makeText(bookmark.this, "Key"+companies.getName(), Toast.LENGTH_SHORT).show();
+                    company.add(companies);
+
+                }
+                if(company.isEmpty())
+                {
+                    Toast.makeText(server.this, "Sorry,No Bookmarks Found", Toast.LENGTH_SHORT).show();
+                }
+
+                //creating adapter
+                badapter = new Badapter(getApplicationContext(),company) ;
+
+                //adding adapter to recyclerview
+                recyclerView.setAdapter(badapter);
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                progressDialog.dismiss();
+            }
+        });
     }
 
     @Override
@@ -127,10 +204,8 @@ public class server extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+            Intent intent = new Intent(server.this, choose.class);
+            startActivity(intent);
 
         }
 

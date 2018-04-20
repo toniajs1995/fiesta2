@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_name"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Company Name..." />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_lic"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="License Number..."
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_add"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Address..."
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_location"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Location..."
+        android:layout_marginTop="150dp"/>
+
+    <Spinner
+        android:id="@+id/s_district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/s_location"
+        android:layout_marginTop="16dp"
+        android:entries="@array/district"
+        android:hint="District..." />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_email"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email id..."
+        android:layout_marginTop="250dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_phone"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Contact Number..."
+        android:layout_marginTop="300dp"/>
+
+    <TextView
+        android:id="@+id/s_budget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/s_phone"
+        android:layout_marginTop="11dp"
+        android:layout_weight="1"
+        android:inputType="text"
+        android:text="Budget for a service"
+        android:textColor="#000"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_minbudget"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:hint="Minimum Budget..."
+        android:layout_marginTop="400dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_maxbudget"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:hint="Maximum Budget..."
+        android:layout_marginTop="450dp"/>
+
+    <TextView
+        android:id="@+id/s_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/s_maxbudget"
+        android:layout_marginTop="13dp"
+        android:layout_weight="1"
+        android:inputType="text"
+        android:text="Services"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/deco"
+        android:text="Decoration"
+        android:layout_marginTop="550dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/make"
+        android:text="Hair and Makeup"
+        android:layout_marginTop="580dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/out"
+        android:text="Outfits"
+        android:layout_marginTop="610dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/enter"
+        android:text="Entertainment"
+        android:layout_marginTop="640dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/cat"
+        android:text="Catering"
+        android:layout_marginTop="670dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/trans"
+        android:text="Transportation"
+        android:layout_marginTop="700dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/invi"
+        android:text="Invitation"
+        android:layout_marginTop="730dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/med"
+        android:text="Media"
+        android:layout_marginTop="760dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/cake"
+        android:text="Cakes/Desserts"
+        android:layout_marginTop="790dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/mis"
+        android:text="Miscellaneous"
+        android:layout_marginTop="820dp"/>
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/s_btnChoose"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shapel"
+        android:text="Choose Image"
+        android:layout_marginTop="870dp"/>
+
+    <Button
+        android:id="@+id/s_btn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shape"
+        android:text="Upload"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="935dp"/>
+</RelativeLayout>

@@ -68,7 +68,7 @@ public class prof_display extends AppCompatActivity {
             demail = (TextView) findViewById(R.id.demail);
             dphone = (TextView) findViewById(R.id.dphone);
             devent1 = (TextView) findViewById(R.id.devent1);
-            devent2 = (TextView) findViewById(R.id.devent2);
+           // devent2 = (TextView) findViewById(R.id.devent2);
             image=findViewById(R.id.image);
             //Toast.makeText(this,uid.toString(), Toast.LENGTH_SHORT).show();
 

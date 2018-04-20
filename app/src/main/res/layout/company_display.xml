@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.project.fiesta2.company_display"
+    android:background="@drawable/back2"
     android:orientation="horizontal">
 
 
@@ -21,13 +22,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:textColor="#FFFFFF"
+            android:background="#1A237E"
             android:layout_marginTop="305dp"
             android:id="@+id/dname"
             android:textAlignment="center"
             android:textColorHighlight="#000"
             android:textSize="25sp"
             android:text="Company Details"
-            android:textColor="#000"/>
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -84,7 +87,7 @@
             android:layout_marginTop="540dp"
             android:text="Categories:"
             android:textSize="18sp"
-            android:textColor="#000" />
+            android:textColor="#000"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -180,19 +183,11 @@
             android:textSize="15sp"
             android:textColor="#000"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/devent2"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="870dp"
-            android:textSize="15sp"
-            android:textColor="#000"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginTop="900dp"
+            android:layout_marginTop="870dp"
             android:text="Booked Dates:"
             android:textSize="18sp"
             android:textColor="#000" />
@@ -210,7 +205,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bookmark"
+            android:background="#1A237E"
             android:layout_marginTop="960dp"
+            android:textColor="#FFFFFF"
             android:id="@+id/bookmark"/>
 
     </RelativeLayout>

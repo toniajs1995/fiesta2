@@ -7,7 +7,7 @@
     tools:context="com.example.project.fiesta2.marriage"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@color/backgroundcolor">
+    android:background="@drawable/back2">
 
     <ScrollView
         android:layout_width="match_parent"
