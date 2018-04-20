@@ -110,6 +110,13 @@ public class out_display extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        if (id == R.id.action_settings3) {
+            Intent intent = new Intent(out_display.this,event_date.class);
+            intent.putExtra("key",key);
+            //Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,14 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 /**
- * Created by user on 06-04-2018.
+ * Created by user on 20-04-2018.
  */
 
-public class trans_display extends AppCompatActivity {
+public class company extends AppCompatActivity {
 
     private ArrayList<Companies> companies;
     DatabaseReference mDatabase;
-    TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
+    TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,ddates;
     String uid,str,key;
     ImageView image;
     DisplayAdapter adapter;
@@ -50,18 +51,19 @@ public class trans_display extends AppCompatActivity {
         dcat = (TextView) findViewById(R.id.dcat);
         demail = (TextView) findViewById(R.id.demail);
         dphone = (TextView) findViewById(R.id.dphone);
-        // devent1 = (TextView) findViewById(R.id.devent1);
-        // devent2 = (TextView) findViewById(R.id.devent2);
+        devent1 = (TextView) findViewById(R.id.devent1);
+        ddates = (TextView) findViewById(R.id.ddates);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 companies=new ArrayList<>();
-                DataSnapshot snap=snapshot.child("transportation");
-                // Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
+                DataSnapshot snap=snapshot.child("service_provider");
+               // Toast.makeText(company.this, "Key "+key, Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
-                adapter= new DisplayAdapter(companies,getApplicationContext(),"transportation");
+              //  Toast.makeText(company.this, company.getName(), Toast.LENGTH_SHORT).show();
+                adapter= new DisplayAdapter(companies,getApplicationContext(),"service_provider");
                 listView.setAdapter(adapter);
             }
 
@@ -90,35 +92,26 @@ public class trans_display extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(trans_display.this,review.class);
+            Intent intent = new Intent(company.this,review.class);
             intent.putExtra("key",key);
             // Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
         if (id == R.id.action_settings1) {
-            Intent intent = new Intent(trans_display.this,rating.class);
+            Intent intent = new Intent(company.this,rating.class);
             intent.putExtra("key",key);
             //  Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
         if (id == R.id.action_settings2) {
-            Intent intent = new Intent(trans_display.this,bookmark.class);
+            Intent intent = new Intent(company.this,bookmark.class);
             // intent.putExtra("key",key);
             //  Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }
-
-        if (id == R.id.action_settings3) {
-            Intent intent = new Intent(trans_display.this,event_date.class);
-            intent.putExtra("key",key);
-            //Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
-            startActivity(intent);
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
-
 }

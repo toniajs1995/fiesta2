@@ -95,7 +95,7 @@
             android:textColor="#000"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_marginTop="610dp"
             android:text="Categories:"
@@ -103,11 +103,12 @@
             android:textColor="#000" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
             android:id="@+id/dcat"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="640dp"
+            android:text="categories"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="610dp"
             android:textSize="15sp"
             android:textColor="#000"/>
 
@@ -181,9 +182,9 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="910dp"
-            android:text="Recent Event:"
+            android:text="Recent Events:"
             android:textSize="18sp"
             android:textColor="#000" />
 
@@ -196,6 +197,7 @@
             android:textSize="15sp"
             android:textColor="#000"/>
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -206,8 +208,8 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ddate"
+            android:layout_height="25dp"
+            android:id="@+id/ddates"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="1000dp"
             android:textSize="15sp"

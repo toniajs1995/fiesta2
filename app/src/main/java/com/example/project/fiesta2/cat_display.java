@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class cat_display extends AppCompatActivity {
     private ArrayList<Companies> companies;
     DatabaseReference mDatabase;
-    TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,devent2;
+    TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,ddates;
     String uid,str,key;
     ImageView image;
     DisplayAdapter adapter;
@@ -50,15 +50,15 @@ public class cat_display extends AppCompatActivity {
         dcat = (TextView) findViewById(R.id.dcat);
         demail = (TextView) findViewById(R.id.demail);
         dphone = (TextView) findViewById(R.id.dphone);
-        // devent1 = (TextView) findViewById(R.id.devent1);
-        // devent2 = (TextView) findViewById(R.id.devent2);
+        devent1 = (TextView) findViewById(R.id.devent1);
+        ddates = (TextView) findViewById(R.id.ddates);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 companies=new ArrayList<>();
                 DataSnapshot snap=snapshot.child("catering");
-               // Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
                 adapter= new DisplayAdapter(companies,getApplicationContext(),"catering");
@@ -70,6 +70,7 @@ public class cat_display extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
 
     }
 
@@ -108,6 +109,14 @@ public class cat_display extends AppCompatActivity {
             Intent intent = new Intent(cat_display.this,bookmark.class);
             // intent.putExtra("key",key);
             //  Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            return true;
+        }
+
+        if (id == R.id.action_settings3) {
+            Intent intent = new Intent(cat_display.this,event_date.class);
+            intent.putExtra("key",key);
+            //Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
             startActivity(intent);
             return true;
         }

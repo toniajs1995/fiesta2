@@ -75,48 +75,46 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
         }
 
        // String[] parts = company.getCategory().split(Pattern.quote(",")); // Split on period.
-        viewHolder.dname.setText(company.getName());
-        viewHolder.dadd.setText(company.getAddress());
-        viewHolder.dloc.setText(company.getLocation());
-        viewHolder.ddis.setText(company.getDistrict());
-        viewHolder.dmin_bud.setText(company.getMin_budget());
-        viewHolder.dmax_bud.setText(company.getMax_budget());
-        viewHolder.dcat.setText(company.getCategory());
-        viewHolder.demail.setText(company.getEmail_id());
-        viewHolder.dphone.setText(company.getPhone());
-        viewHolder.devent1.setText(company.getEvent_1());
-        viewHolder.ddates.setText(company.getDates());
-        Glide.with(context).load(company.getImage()).into(viewHolder.image);
-        // Return the completed view to render on screen
-       viewHolder.bookmark.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // final String buy_qty = viewHolder.buy_quantity.getText().toString();
-                //final String prd_qty = products.getQuantity();
-                //double qnty = Double.parseDouble(buy_qty);
-                //double prdt_price = Double.parseDouble(products.getPrice());
-                //String tot_price = Double.toString(qnty*prdt_price);
+
+
+            viewHolder.dadd.setText(company.getAddress());
+            viewHolder.dloc.setText(company.getLocation());
+            viewHolder.ddis.setText(company.getDistrict());
+            viewHolder.dmin_bud.setText(company.getMin_budget());
+            viewHolder.dmax_bud.setText(company.getMax_budget());
+            viewHolder.dcat.setText(company.getCategory());
+            viewHolder.demail.setText(company.getEmail_id());
+            viewHolder.dphone.setText(company.getPhone());
+            viewHolder.devent1.setText(company.getEvent_1());
+            viewHolder.ddates.setText(company.getDates());
+            viewHolder.dname.setText(company.getName());
+            Glide.with(context).load(company.getImage()).into(viewHolder.image);
+            // Return the completed view to render on screen
+            viewHolder.bookmark.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     String uid = user.getUid();
-                    String email=user.getEmail();
+                    String email = user.getEmail();
                     Toast.makeText(context, "Company added to bookmarks", Toast.LENGTH_SHORT).show();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/"+uid);
-                    String id=mDatabase.push().getKey();
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/" + uid);
+                    String id = mDatabase.push().getKey();
                     final Map bookmark = new HashMap();
-                    //cart.put("key",products.getrKey());
 
-                    bookmark.put("name",company.getName());
-                    bookmark.put("image",company.getImage());
-                    bookmark.put("bkey",id);
-                    bookmark.put("key",company.getKey());
-                    bookmark.put("category",category);
-                    bookmark.put("email_id",email);
+
+                    bookmark.put("name", company.getName());
+                    bookmark.put("image", company.getImage());
+                    bookmark.put("bkey", id);
+                    bookmark.put("key", company.getKey());
+                    bookmark.put("category", category);
+                    bookmark.put("email_id", email);
                     mDatabase.child(id).setValue(bookmark);
                     //mDatabase.child(uid).setValue(cart);
 
-            }
-        });
+                }
+            });
+
         return convertView;
     }
 }

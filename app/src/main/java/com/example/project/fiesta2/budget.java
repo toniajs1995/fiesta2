@@ -3,6 +3,7 @@ package com.example.project.fiesta2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -85,37 +88,56 @@ public class budget extends AppCompatActivity {
 
 
     public void optionselected(View view) {
-        EditText e1=(EditText)findViewById(R.id.loc);
-        place=e1.getText().toString();
-        //long p = Long.parseLong(place);
+        EditText e1 = (EditText) findViewById(R.id.loc);
+        place = e1.getText().toString();
+        if (!TextUtils.isEmpty(place)) {
+            //final long p = Long.parseLong(place);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            final String uid = user.getUid();
+            //long p = Long.parseLong(place);
 
-        databaseArtists.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            databaseArtists.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
 
-                artistList.clear();
-                for (DataSnapshot artistSnapshot: dataSnapshot.getChildren()){
-                    Companies artist =artistSnapshot.getValue(Companies.class);
-                    if(Integer.parseInt(artist.max_budget) < Integer.parseInt(place)) {
+                    artistList.clear();
+                    for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()) {
+                        Companies artist = artistSnapshot.getValue(Companies.class);
+                        String id = artist.getKey();
+                        if (!id.equals(uid)) {
+                            if (Integer.parseInt(artist.max_budget) < Integer.parseInt(place)) {
 
-                        artistList.add(artist);
+                                artistList.add(artist);
+                            }
+                        }
                     }
-                }
-                if(artistList.isEmpty())
-                {
+                    if (artistList.isEmpty()) {
                         Toast.makeText(budget.this, "Sorry,No Results Found", Toast.LENGTH_SHORT).show();
+                    }
+                    ArtistList adapter = new ArtistList(budget.this, artistList);
+                    listViewArtists.setAdapter(adapter);
+                    listViewArtists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Companies companies = artistList.get(position);
+                            String key = companies.getKey();
+                            //Toast.makeText(location.this, "Key "+key, Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(location.this, key, Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(budget.this, company.class);
+                            intent.putExtra("key", key);
+                            startActivity(intent);
+                        }
+
+                    });
                 }
-                ArtistList adapter=new ArtistList(budget.this,artistList);
-                listViewArtists.setAdapter(adapter);
 
-            }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+                }
+            });
 
 
+        }
     }
 }

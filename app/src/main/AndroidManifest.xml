@@ -19,65 +19,85 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".baptism"
-            android:label="@string/title_activity_baptism"/>
+        <activity
+            android:name=".baptism"
+            android:label="@string/title_activity_baptism" />
         <activity
             android:name=".server"
             android:label="@string/title_activity_server"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".profile" />
-        <activity android:name=".choose"/>
-        <activity android:name=".recent"
-            android:label="Recent Event"/>
+        <activity android:name=".choose" />
+        <activity
+            android:name=".recent"
+            android:label="Recent Event" />
         <activity android:name=".client" />
         <activity android:name=".budget" />
-        <activity android:name=".marriage"
-            android:label="@string/title_activity_marriage"/>
-        <activity android:name=".deco"
-            android:label="@string/title_activity_deco"/>
+        <activity
+            android:name=".marriage"
+            android:label="@string/title_activity_marriage" />
+        <activity
+            android:name=".deco"
+            android:label="@string/title_activity_deco" />
         <activity android:name=".location" />
         <activity android:name=".dates" />
         <activity android:name=".company_display" />
         <activity android:name=".prof_display" />
-        <activity android:name=".review"
-            android:label="Review"/>
-        <activity android:name=".update"
-            android:label="Update Profile"/>
-        <activity android:name=".rating"
-            android:label="Rating"/>
-        <activity android:name=".bookmark"
-            android:label="@string/title_activity_bookmark"/>
-        <activity android:name=".review_dis"
-            android:label="Reviews"/>
-        <activity android:name=".cat"
-            android:label="Catering"/>
-        <activity android:name=".rating_dis"
-            android:label="Ratings"/>
-        <activity android:name=".birthday"
-            android:label="@string/title_activity_birthday"/>
-        <activity android:name=".cake"
-            android:label="Cakes and Desserts"/>
+        <activity
+            android:name=".review"
+            android:label="Review" />
+        <activity
+            android:name=".update"
+            android:label="Update Profile" />
+        <activity
+            android:name=".rating"
+            android:label="Rating" />
+        <activity
+            android:name=".bookmark"
+            android:label="@string/title_activity_bookmark" />
+        <activity
+            android:name=".review_dis"
+            android:label="Reviews" />
+        <activity
+            android:name=".cat"
+            android:label="Catering" />
+        <activity
+            android:name=".rating_dis"
+            android:label="Ratings" />
+        <activity
+            android:name=".birthday"
+            android:label="@string/title_activity_birthday" />
+        <activity
+            android:name=".cake"
+            android:label="Cakes and Desserts" />
         <activity android:name=".cake_display" />
-        <activity android:name=".cat_display"/>
-        <activity android:name=".enter"
-            android:label="Entertainment"/>
+        <activity android:name=".cat_display" />
+        <activity
+            android:name=".enter"
+            android:label="Entertainment" />
         <activity android:name=".enter_display" />
-        <activity android:name=".make"
-            android:label="Hair and Makeup"/>
-        <activity android:name=".make_display"/>
-        <activity android:name=".med"
-            android:label="Media"/>
-        <activity android:name=".med_display"/>
-        <activity android:name=".mis"
-            android:label="Miscellaneous"/>
-        <activity android:name=".mis_display"/>
-        <activity android:name=".out"
-            android:label="Outfits"/>
-        <activity android:name=".out_display"/>
-        <activity android:name=".trans"
-            android:label="Transportation"/>
-        <activity android:name=".trans_display"/>
-
+        <activity
+            android:name=".make"
+            android:label="Hair and Makeup" />
+        <activity android:name=".make_display" />
+        <activity
+            android:name=".med"
+            android:label="Media" />
+        <activity android:name=".med_display" />
+        <activity
+            android:name=".mis"
+            android:label="Miscellaneous" />
+        <activity android:name=".mis_display" />
+        <activity
+            android:name=".out"
+            android:label="Outfits" />
+        <activity android:name=".out_display" />
+        <activity
+            android:name=".trans"
+            android:label="Transportation" />
+        <activity android:name=".trans_display" />
+        <activity android:name=".company" />
+        <activity android:name=".event_date"></activity>
     </application>
 
 </manifest>
