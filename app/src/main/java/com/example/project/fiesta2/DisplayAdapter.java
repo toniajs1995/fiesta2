@@ -99,7 +99,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
                     String uid = user.getUid();
                     String email = user.getEmail();
                     Toast.makeText(context, "Company added to bookmarks", Toast.LENGTH_SHORT).show();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/" + key);
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/" + uid);
                     String id = mDatabase.push().getKey();
                     final Map bookmark = new HashMap();
 
