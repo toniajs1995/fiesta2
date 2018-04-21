@@ -61,7 +61,7 @@ public class make_display  extends AppCompatActivity {
                 // Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
-                adapter= new DisplayAdapter(companies,getApplicationContext(),"hair_makeup",key);
+                adapter= new DisplayAdapter(companies,getApplicationContext(),"hair_makeup");
                 listView.setAdapter(adapter);
             }
 

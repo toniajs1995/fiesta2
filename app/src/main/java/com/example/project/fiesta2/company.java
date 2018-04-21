@@ -63,7 +63,7 @@ public class company extends AppCompatActivity {
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
               //  Toast.makeText(company.this, company.getName(), Toast.LENGTH_SHORT).show();
-                adapter= new DisplayAdapter(companies,getApplicationContext(),"service_provider",key);
+                adapter= new DisplayAdapter(companies,getApplicationContext(),"service_provider");
                 listView.setAdapter(adapter);
             }
 

@@ -61,7 +61,7 @@ public class mis_display extends AppCompatActivity {
                 // Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
-                adapter= new DisplayAdapter(companies,getApplicationContext(),"miscellaneous",key);
+                adapter= new DisplayAdapter(companies,getApplicationContext(),"miscellaneous");
                 listView.setAdapter(adapter);
             }
 

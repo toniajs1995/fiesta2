@@ -36,12 +36,12 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
         Button bookmark;
     }
 
-    public DisplayAdapter(ArrayList<Companies> data, Context context,String category,String key) {
+    public DisplayAdapter(ArrayList<Companies> data, Context context,String category) {
         super(context, R.layout.company_display, data);
         this.company = data;
         this.context = context;
         this.category=category;
-        this.key=key;
+
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
