@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="Fiesta"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -97,7 +97,6 @@
             android:label="Transportation" />
         <activity android:name=".trans_display" />
         <activity android:name=".company" />
-        <activity android:name=".event_date"></activity>
     </application>
 
 </manifest>

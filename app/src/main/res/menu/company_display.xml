@@ -20,9 +20,5 @@
         android:title="Bookmarks"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/action_settings3"
-        android:orderInCategory="100"
-        android:title="Events and Dates"
-        app:showAsAction="never" />
+
 </menu>

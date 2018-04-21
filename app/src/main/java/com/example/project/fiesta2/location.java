@@ -63,7 +63,19 @@ public class location extends AppCompatActivity {
                 }
                 ArtistList1 adapter=new ArtistList1(location.this,artistList1);
                 listViewArtists.setAdapter(adapter);
+                listViewArtists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Companies companies = artistList1.get(position);
+                        String key = companies.getKey();
+                        //Toast.makeText(location.this, "Key "+key, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(location.this, key, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(location.this, company.class);
+                        intent.putExtra("key", key);
+                        startActivity(intent);
+                    }
 
+                });
             }
 
             @Override

@@ -29,18 +29,19 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
     DatabaseReference mDatabase;
     private Context context;
     private ArrayList<Companies> company;
-    String category;
+    String category,key;
     private static class ViewHolder {
         TextView dname, dlic_no, dadd,dloc, ddis, dmin_bud,dmax_bud,dcat,demail,dphone,devent1,ddates;
         ImageView image;
         Button bookmark;
     }
 
-    public DisplayAdapter(ArrayList<Companies> data, Context context,String category) {
+    public DisplayAdapter(ArrayList<Companies> data, Context context,String category,String key) {
         super(context, R.layout.company_display, data);
         this.company = data;
         this.context = context;
         this.category=category;
+        this.key=key;
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -98,7 +99,7 @@ public class DisplayAdapter extends ArrayAdapter<Companies> {
                     String uid = user.getUid();
                     String email = user.getEmail();
                     Toast.makeText(context, "Company added to bookmarks", Toast.LENGTH_SHORT).show();
-                    mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/" + uid);
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("bookmark/" + key);
                     String id = mDatabase.push().getKey();
                     final Map bookmark = new HashMap();
 

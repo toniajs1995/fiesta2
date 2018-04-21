@@ -67,11 +67,12 @@ public class budget extends AppCompatActivity {
                 listViewArtists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                        Companies companies=artistList.get(position);
-                        String key=companies.getKey();
-                        Intent intent = new Intent(budget.this,company_display.class);
-                        intent.putExtra("key",key);
+                        Companies companies = artistList.get(position);
+                        String key = companies.getKey();
+                        //Toast.makeText(location.this, "Key "+key, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(location.this, key, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(budget.this, company.class);
+                        intent.putExtra("key", key);
                         startActivity(intent);
                     }
 

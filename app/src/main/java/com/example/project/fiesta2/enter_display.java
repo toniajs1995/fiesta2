@@ -61,7 +61,7 @@ public class enter_display extends AppCompatActivity {
                 // Toast.makeText(company_display.this, "Key "+key, Toast.LENGTH_SHORT).show();
                 Companies company = snap.child(key).getValue(Companies.class);
                 companies.add(company);
-                adapter= new DisplayAdapter(companies,getApplicationContext(),"entertainment");
+                adapter= new DisplayAdapter(companies,getApplicationContext(),"entertainment",key);
                 listView.setAdapter(adapter);
             }
 
@@ -111,13 +111,7 @@ public class enter_display extends AppCompatActivity {
             return true;
         }
 
-        if (id == R.id.action_settings3) {
-            Intent intent = new Intent(enter_display.this,event_date.class);
-            intent.putExtra("key",key);
-            //Toast.makeText(company_display.this, key, Toast.LENGTH_SHORT).show();
-            startActivity(intent);
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
     }
 
